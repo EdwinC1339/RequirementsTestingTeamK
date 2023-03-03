@@ -18,8 +18,14 @@ class Restaurant {
     }
 
     getAllFulfills() {
-        return ["Kosher"];
+        var arr = [];
+        for (const [key, value] of Object.entries(this.restrictionFulfillment)) {
+            if (this.restrictionFulfillment[key]) {
+                arr.push(key);
+            }
+        }
+        return arr;
     }
 };
 
-export default Restaurant
+export default Restaurant;
