@@ -1,0 +1,130 @@
+.container-fluid {
+  padding: 3% 15% !important;
+}
+
+.mine {
+  padding: 0 5% 1rem !important;
+}
+.navbar-brand-div {
+  padding: 1% 0 0 0;
+}
+.navbar-brand {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  left: 0;
+  padding: 50% 10%;
+}
+
+.navbar a {
+  color: #000000;
+}
+
+.nav-link {
+  font-size: 1.2rem;
+  border-width: 1%;
+  padding-bottom: 1%;
+  margin-left: 5px;
+  transition: all 0.2s;
+  position: relative;
+}
+
+.nav-link::after {
+  content: "";
+  height: 2px;
+  width: 100%;
+  background-color: #722f37;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  opacity: 0; /* Hide the line */
+  transition: all 0.2s;
+}
+
+.nav-link:hover::after {
+  opacity: 1; /* Show the line */
+}
+
+.card {
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+  padding: 80px 30px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.imgBackground {
+  background-color: #722f37;
+  padding: 0px 0px 0.05px;
+}
+hr.image {
+  padding: 1px 0;
+
+  border: none;
+  width: auto;
+}
+
+hr.divsection {
+  padding-bottom: 3%;
+  width: auto;
+}
+.text-border {
+  padding: 10px 25px;
+}
+.card title {
+  padding: 40px 0;
+  text-align: center;
+}
+
+.card text {
+  padding: 0 30px;
+}
+
+.card img {
+  position: relative;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 1;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  border: 7px solid #fff;
+  margin-top: -80px;
+}
+
+.card:hover .img {
+  border-color: darkcyan;
+  transition: 0.7s;
+}
+
+.welcome {
+  padding: 10px 300px 50px;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 2rem;
+  box-shadow: 0 0 0.5px rgba(0, 0, 0, 0.5);
+}
+.btn:hover {
+  background-color: #722f37 !important;
+  border-radius: 5px !important;
+}
+
+.horarios {
+  padding: 1% 25% 50px;
+  text-align: center;
+}
+
+.horarios h1 {
+  font-size: 2rem;
+
+  padding-bottom: 3%;
+}
+
+.valores {
+  padding: 10px 100px 50px;
+  text-align: center;
+}
+
+.distrito {
+  padding: 0 25% 5%;
+  text-align: center;
+}
