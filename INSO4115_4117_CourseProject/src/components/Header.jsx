@@ -10,9 +10,6 @@ import {
 } from "react-bootstrap";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import "./styles/styles.css";
-import Home from "../pages/Home";
-import Contact from "../pages/Contact";
-
 export default class Header extends Component {
   render() {
     return (
@@ -32,7 +29,9 @@ export default class Header extends Component {
 
               <NavDropdown title="More" id="navbarScrollingDropdown">
                 <NavDropdown.Divider />
-
+                <Nav.Link as={Link} to="/contact">
+                  Contact
+                </Nav.Link>
                 <NavDropdown.Divider />
               </NavDropdown>
             </Nav>

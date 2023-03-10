@@ -9,36 +9,34 @@ export default class Home extends Component {
       <div className="container-fluid">
         <Header />
         <div className="welcome">
-          <h1 className="welcome-header">hi</h1>
-          <p className="welcome-text">h</p>
+          <h1 className="welcome-header">Hi!</h1>
+          <p>
+            What is Can I Eat There? Can I Eat There? aims to help people be
+            able to find local food services that meet their different dietary
+            preferences.{" "}
+          </p>
           <button type="button" class="btn btn-outline-secondary">
-            Conocer más
+            Know more
           </button>
         </div>
 
         <hr className="divsection" />
         <div className="horarios">
-          <h1 className="horario">H</h1>
+          <h1 className="horario">How does it work?</h1>
           <div className="row">
             <div className="col-lg-6">
-              <h2 className="horario-header">Mi</h2>
-              <p className="horario-text">7:</p>
+              <h2 className="horario-header">Step 1</h2>
+              <p className="horario-text">Fill in questionnaire</p>
             </div>
             <div className="col-lg-6">
-              <h2 className="horario-header">h</h2>
+              <h2 className="horario-header">Step 2</h2>
               <p className="horario-text">
-                <h4 className="horario-section">Esh</h4>
-                9:00 am - 10:20 am
-                <h4 className="just-space"></h4>
-                <h4 className="horario-section">h</h4>h
+                Get restaurant that meet your dietary preferences
               </p>
             </div>
           </div>
         </div>
-        <hr className="divsection" />
-        <div className="distrito">
-          <p>j</p>
-        </div>
+
         <hr className="divsection" />
         <div className="distrito">
           <p>Socials</p>
