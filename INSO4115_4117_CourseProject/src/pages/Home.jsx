@@ -1,11 +1,13 @@
 import React, { Component } from "react";
 
 import "../components/styles/styles.css";
+import Header from "../components/Header";
 
 export default class Home extends Component {
   render() {
     return (
       <div className="container-fluid">
+        <Header />
         <div className="welcome">
           <h1 className="welcome-header">hi</h1>
           <p className="welcome-text">h</p>

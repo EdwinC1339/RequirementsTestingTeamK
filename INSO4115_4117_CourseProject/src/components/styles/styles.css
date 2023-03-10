@@ -29,6 +29,7 @@
   position: relative;
 }
 
+/*Color under nav link when hovered*/
 .nav-link::after {
   content: "";
   height: 2px;

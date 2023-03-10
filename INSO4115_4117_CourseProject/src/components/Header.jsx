@@ -16,10 +16,10 @@ import Contact from "../pages/Contact";
 export default class Header extends Component {
   render() {
     return (
-      <Router>
+      <div>
         {" "}
         <div className="navbar-brand-div">
-          <Navbar.Brand href="/home">Can I Eat There?</Navbar.Brand>{" "}
+          <Navbar.Brand href="/">Can I Eat There?</Navbar.Brand>{" "}
         </div>
         <Navbar className="mine" expand="lg">
           {" "}
@@ -38,14 +38,7 @@ export default class Header extends Component {
             </Nav>
           </Navbar.Collapse>
         </Navbar>
-        <div>
-          <Routes>
-            <Route path="/home" element={<Home />} />
-
-            <Route path="/contact" element={<Contact />} />
-          </Routes>
-        </div>
-      </Router>
+      </div>
     );
   }
 }
