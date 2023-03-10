@@ -4,6 +4,7 @@ import Contact from "./pages/Contact";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
+import React, { Component } from "react";
 
 function App() {
   return (
