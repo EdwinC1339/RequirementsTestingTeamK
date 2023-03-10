@@ -16,7 +16,7 @@ import Contact from "../pages/Contact";
 export default class Header extends Component {
   render() {
     return (
-      <div>
+      <div className="nav-div">
         {" "}
         <div className="navbar-brand-div">
           <Navbar.Brand href="/">Can I Eat There?</Navbar.Brand>{" "}

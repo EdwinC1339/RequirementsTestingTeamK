@@ -1,6 +1,6 @@
 import logo from "./logo.svg";
-import Home from "./pages/Home";
-import Contact from "./pages/Contact";
+import Home from "./pages/Home.jsx";
+import Contact from "./pages/Contact.jsx";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
