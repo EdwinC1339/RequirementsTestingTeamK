@@ -6,29 +6,25 @@ a:active {
   text-decoration: none;
 }
 
-.auth-div {
-  padding: 5% 10% 3% 0;
-}
-.auth-div a {
-  position: absolute;
-  right: 0%;
-  top: 2%;
+.nav-top a {
   font-size: 1rem;
-
-  padding: 2% 10% 0 0;
   color: #5a5a5a;
 }
-.auth-div a:hover {
-  color: #00ab08;
-}
-.auth-div .btn {
+.nav-top .btn {
   background-color: #0e180e;
   color: #fff;
 }
-.auth-div img {
-  position: absolute;
+.nav-top img {
   left: 5%;
   top: 1%;
+}
+.sign-in-container {
+  align-items: center;
+  justify-content: center;
+}
+.sign-in {
+  border-radius: 0px !important;
+  border: 0px !important;
 }
 .custom {
   padding: 1% 5% 1rem !important;
@@ -36,10 +32,9 @@ a:active {
 }
 
 img {
-  width: 10%;
-  height: 10%;
-  padding-bottom: 1%;
+  width: 4em; 
 }
+
 .nav-div {
   background-color: #fff;
 }
@@ -88,7 +83,6 @@ img {
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
   padding: 80px 30px;
   overflow: hidden;
-  border-radius: 10px;
 }
 
 .imgBackground {
@@ -159,7 +153,6 @@ hr.divsection {
 }
 .btn:hover {
   background-color: #00ab08 !important;
-  border-radius: 5px !important;
 }
 
 .home-section {
@@ -244,7 +237,6 @@ p {
   width: 150px;
   display: block;
   text-align: center;
-  border-radius: 10px;
   cursor: pointer;
   font-weight: 600;
   font-size: 18px;
@@ -299,7 +291,6 @@ p {
   border: none;
   padding: 10px;
   text-transform: uppercase;
-  border-radius: 2px;
   float: right;
   cursor: pointer;
 }
@@ -324,7 +315,6 @@ p {
   border: none;
   padding: 10px;
   text-transform: uppercase;
-  border-radius: 2px;
   float: right;
   cursor: pointer;
 }
