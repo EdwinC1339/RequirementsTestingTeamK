@@ -100,32 +100,27 @@ hr.divsection {
 
 .welcome {
   padding: 10px 30px 50px;
-  font-family: "Courier New", Courier, monospace;
-  font-size: 2rem;
   box-shadow: 0 0 0.5px rgba(0, 0, 0, 0.5);
+}
+.welcome h1 {
+  font-size: 2rem;
 }
 .btn:hover {
   background-color: #722f37 !important;
   border-radius: 5px !important;
 }
 
-.horarios {
+.home-section {
   padding: 1% 25% 50px;
   text-align: center;
 }
 
-.horarios h1 {
+.home-section h1 {
   font-size: 2rem;
-
   padding-bottom: 3%;
 }
 
 .valores {
   padding: 10px 100px 50px;
-  text-align: center;
-}
-
-.distrito {
-  padding: 0 25% 5%;
   text-align: center;
 }
