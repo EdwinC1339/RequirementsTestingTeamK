@@ -10,12 +10,16 @@ import {
 } from "react-bootstrap";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import "./styles/styles.css";
+import Logo from "../images/CIETlogo.png";
 export default class Header extends Component {
   render() {
     return (
       <div className="nav-div">
         <div className="navbar-brand-div">
-          <Navbar.Brand href="/">Can I Eat There?</Navbar.Brand>
+          <Navbar.Brand href="/">
+            {" "}
+            <img src={Logo} />
+          </Navbar.Brand>
         </div>
         <Navbar className="custom" expand="lg">
           <Navbar.Toggle aria-controls="navbarScroll" />

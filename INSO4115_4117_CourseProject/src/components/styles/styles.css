@@ -22,15 +22,16 @@ a:active {
 .custom {
   padding: 0 5% 1rem !important;
 }
-.navbar-brand-div {
-  padding: 1% 0 0 0;
+
+img {
+  width: 10%;
+  height: 10%;
 }
 .navbar-brand {
   display: flex;
   justify-content: center;
   width: 100%;
   left: 0;
-  padding: 50% 10%;
 }
 
 .navbar a {
