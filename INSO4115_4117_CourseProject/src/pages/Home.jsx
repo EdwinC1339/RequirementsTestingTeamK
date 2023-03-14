@@ -4,11 +4,17 @@ import "../components/styles/styles.css";
 import Header from "../components/Header";
 import Map from "../components/Map";
 import Footer from "../components/Footer";
-
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 export default class Home extends Component {
   render() {
     return (
       <div className="container-fluid">
+        <div className="auth-div">
+          <Link as={Link} to="/auth">
+            {/*Place a conditional here*/}
+            Sign In
+          </Link>
+        </div>
         <Header />
         <Map />
         <div className="welcome">
@@ -22,7 +28,6 @@ export default class Home extends Component {
             Know more
           </button>
         </div>
-
         <hr className="divsection" />
         <div className="home-section">
           <h1>How does it work?</h1>
@@ -36,10 +41,6 @@ export default class Home extends Component {
               <p>Get restaurant that meet your dietary preferences</p>
             </div>
           </div>
-        </div>
-        <hr className="divsection" />
-        <div className="distrito">
-          <p>Socials</p>
         </div>
         <Footer />
       </div>

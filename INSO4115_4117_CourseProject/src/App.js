@@ -1,5 +1,6 @@
 import logo from "./logo.svg";
 import Home from "./pages/Home.jsx";
+import Auth from "./pages/Auth.jsx";
 import Contact from "./pages/Contact.jsx";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -15,6 +16,8 @@ function App() {
           <Route path="/" element={<Home />} />
 
           <Route path="/contact" element={<Contact />} />
+
+          <Route path="/auth" element={<Auth />} />
         </Routes>
       </Router>
     </div>

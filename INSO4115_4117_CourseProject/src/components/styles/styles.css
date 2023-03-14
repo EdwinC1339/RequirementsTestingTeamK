@@ -1,8 +1,25 @@
+a:link,
+a:visited,
+a:hover,
+a:active {
+  color: #000000;
+  text-decoration: none;
+}
+.auth-div {
+  position: absolute;
+  right: 0%;
+  top: 0%;
+  padding: 1.5% 10% 0 0;
+}
+
 .container-fluid {
   padding: 3% 10% !important;
 }
 
-.mine {
+.auth-div {
+  right: 0% !important;
+}
+.custom {
   padding: 0 5% 1rem !important;
 }
 .navbar-brand-div {
