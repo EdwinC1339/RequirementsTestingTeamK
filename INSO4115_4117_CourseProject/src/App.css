@@ -1,12 +1,12 @@
 .App {
   text-align: center;
   font-family: "Open Sans", sans-serif;
-
+  color: #5a5a5a;
   background-size: auto;
   min-height: 100%;
 }
 body {
-  background-color: #d2f8d2;
+  background-color: #95f985;
 }
 .App-logo {
   height: 40vmin;
