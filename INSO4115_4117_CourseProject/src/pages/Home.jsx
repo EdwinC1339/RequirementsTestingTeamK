@@ -15,7 +15,7 @@ export default class Home extends Component {
           <div className="filters-container col-lg-4">
             <Filters />
           </div>
-          <div className="map-container col-lg-8">
+          <div className="map-container col-lg-8 d-flex justify-content-center">
             <Map />
           </div>
         </div>

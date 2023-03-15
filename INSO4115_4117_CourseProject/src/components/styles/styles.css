@@ -136,6 +136,10 @@ hr.divsection {
   transition: 0.7s;
 }
 
+.map-stuff {
+  background-color: #fff;
+}
+
 .welcome {
   padding: 5% 30px 50px;
   box-shadow: 0 0 0.5px rgba(0, 0, 0, 0.5);
