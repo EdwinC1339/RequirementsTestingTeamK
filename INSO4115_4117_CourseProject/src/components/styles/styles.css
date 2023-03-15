@@ -25,6 +25,12 @@ a:active {
 .sign-in {
   border-radius: 0px !important;
   border: 0px !important;
+  font-size: 1.2rem;
+  margin-top: 0;
+  margin-bottom: 0;
+  justify-content: center;
+  transition: all 0.2s;
+  position: relative;
 }
 .custom {
   padding: 1% 5% 1rem !important;

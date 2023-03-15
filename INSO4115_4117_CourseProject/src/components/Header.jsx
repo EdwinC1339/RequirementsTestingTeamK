@@ -27,12 +27,12 @@ export default class Header extends Component {
             </Navbar.Brand>
           </div>
           <div className="col-sm-3 row align-middle">
-          <button type="button" className="btn btn-outline-secondary sign-in col-sm-6">
+          <a type="button" className="btn btn-outline-secondary sign-in col-sm-6" href="/auth">
               SIGN IN
-          </button>
-          <button type="button" className="btn btn-outline-secondary sign-in col-sm-6">
+          </a>
+          <a type="button" className="btn btn-outline-secondary sign-in col-sm-6" href="/auth">
               SIGN UP
-          </button>
+          </a>
           </div>
         </div>
         <div className="">
