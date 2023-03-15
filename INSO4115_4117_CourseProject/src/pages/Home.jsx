@@ -5,7 +5,18 @@ import Header from "../components/Header";
 import Map from "../components/Map";
 import Footer from "../components/Footer";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+
+
+// const google = window.google = window.google ? window.google : {}
+
+
 export default class Home extends Component {
+
+
+
+
+
+  
   render() {
     return (
       <div>
