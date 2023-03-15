@@ -1,5 +1,5 @@
 import React from 'react'
-import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
+import { GoogleMap, useJsApiLoader, Marker, InfoWindow } from '@react-google-maps/api';
 import * as dotenv from 'dotenv'
 
 dotenv.config()
@@ -23,10 +23,25 @@ function Map() {
   const [map, setMap] = React.useState(null)
 
   const onLoad = React.useCallback(function callback(map) {
-    // This is just an example of getting and using the map instance!!! don't just blindly copy!
-    const bounds = new window.google.maps.LatLngBounds(center);
+    let request = {
+      query: "Museum of Contemporary Art Australia",
+      fields: ["name", "geometry"]
+    };
 
-    setMap(map)
+    // let service = new google.maps.places.PlacesService(map);
+
+    // service.findPlaceFromQuery(request, (results, status) => {
+    //   if (status === google.maps.places.PlacesServiceStatus.OK) {
+    //     for (var i = 0; i < results.length; i++) {
+    //       coords.push(results[i]);
+    //     }
+
+    //     this.setState({
+    //       center: results[0].geometry.location,
+    //       coordsResult: coords
+    //     });
+    //   }
+    // });
   }, [])
 
   const onUnmount = React.useCallback(function callback(map) {

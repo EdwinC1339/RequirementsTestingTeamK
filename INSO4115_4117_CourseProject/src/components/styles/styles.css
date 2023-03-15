@@ -95,6 +95,11 @@ img {
   overflow: hidden;
 }
 
+/*Filters*/
+.instructions h2 {
+  color:#000000;
+}
+
 .imgBackground {
   background-color: #00ab08;
   padding: 0px 0px 0.05px;
