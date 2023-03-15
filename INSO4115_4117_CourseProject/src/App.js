@@ -6,35 +6,22 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import React, { Component } from "react";
-import { Loader } from '@googlemaps/js-api-loader';
 
+function App() {
+  return (
+    <div className="App">
+      <Router>
+        {" "}
+        <Routes>
+          <Route path="/" element={<Home />} />
 
-import { Map, GoogleApiWrapper } from 'google-maps-react';
+          <Route path="/contact" element={<Contact />} />
 
-const mapStyles = {
-  width: '100%',
-  height: '100%'
-};
-
-export class MapContainer extends Component {
-  render() {
-    return (
-      <Map
-        google={this.props.google}
-        zoom={10.5}
-        style={mapStyles}
-        initialCenter={
-          {
-            lat: 18.26633000,
-            lng: -66.40572000
-          }
-        }
-      />
-    );
-  }
+          <Route path="/auth" element={<Auth />} />
+        </Routes>
+      </Router>
+    </div>
+  );
 }
 
-export default GoogleApiWrapper({
-  apiKey: 'put api here'
-})(MapContainer);
-
+export default App;
