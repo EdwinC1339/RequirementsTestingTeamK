@@ -9,7 +9,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 export default class Home extends Component {
   render() {
     return (
-      <div>
+      <div className="container-fluid">
         <Header />
         <div className="map-stuff row">
           <div className="filters-container col-lg-4">
@@ -26,7 +26,7 @@ export default class Home extends Component {
             Can I Eat There? aims to help people be able to find local food
             services that meet their different dietary preferences.{" "}
           </p>
-          <button type="button" class="btn btn-outline-secondary">
+          <button type="button" className="btn btn-outline-secondary">
             Know more
           </button>
           <div className="home-section">

@@ -6,6 +6,10 @@ a:active {
   text-decoration: none;
 }
 
+.App {
+  background-color: #fff;
+}
+
 .nav-top a {
   font-size: 1rem;
   color: #5a5a5a;
