@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import "../components/styles/styles.css";
 import Header from "../components/Header";
 import Map from "../components/Map";
+import Filters from "../components/Filters"
 import Footer from "../components/Footer";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 export default class Home extends Component {
@@ -10,7 +11,14 @@ export default class Home extends Component {
     return (
       <div>
         <Header />
-        <Map />
+        <div className="map-stuff row">
+          <div className="filters-container col-lg-4">
+            <Filters />
+          </div>
+          <div className="map-container col-lg-8">
+            <Map />
+          </div>
+        </div>
         <div className="welcome">
           <h1>WHAT IS CAN I EAT THERE?</h1>
 

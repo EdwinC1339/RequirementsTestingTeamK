@@ -5,8 +5,8 @@ import * as dotenv from 'dotenv'
 dotenv.config()
 
 const containerStyle = {
-  width: '400px',
-  height: '400px'
+  width: '60rem',
+  height: '35rem'
 };
 
 const center = {
