@@ -12,6 +12,10 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import "./styles/styles.css";
 import Logo from "../images/CIETlogo.png";
 import TeamLogo from "../images/teamlogo.jpg";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faRightToBracket } from "@fortawesome/free-solid-svg-icons";
 export default class Header extends Component {
   render() {
     return (
@@ -31,6 +35,7 @@ export default class Header extends Component {
           </div>
           <div className="col-sm-3 row align-middle">
             <a type="button" className="btn  sign-in col-sm-12" href="/auth">
+              <FontAwesomeIcon icon={faRightToBracket} />
               Sign In/Register
             </a>
           </div>
@@ -43,13 +48,15 @@ export default class Header extends Component {
             <Nav className="m-auto" style={{ maxHeight: "100px" }} navbarScroll>
               <Nav.Link as={Link} to="/contact">
                 {/*Place a conditional here*/}
+                <FontAwesomeIcon icon={faUser} />
                 PROFILE
               </Nav.Link>
               <Nav.Link as={Link} to="/contact">
+                <FontAwesomeIcon icon={faEnvelope} />
                 CONTACT
               </Nav.Link>
 
-              <NavDropdown title="MORE" id="navbarScrollingDropdown">
+              <NavDropdown title="+MORE" id="navbarScrollingDropdown">
                 <Nav.Link as={Link} to="/contact">
                   Contact
                 </Nav.Link>
