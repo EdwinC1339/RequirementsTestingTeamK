@@ -15,7 +15,7 @@ function Filters() {
   });
 
   return (
-    <div className="filters-div">
+    <div className="filters-div ">
       <h1>SELECT YOUR RESTRICTIONS</h1>
       <p>
         Select from an extensive list of dietary restrictions to be able to

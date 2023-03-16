@@ -37,7 +37,7 @@ export default class Header extends Component {
         </div>
         <div className=""></div>
 
-        <Navbar className="custom" expand="lg">
+        <Navbar className="custom " expand="lg">
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
             <Nav className="m-auto" style={{ maxHeight: "100px" }} navbarScroll>
