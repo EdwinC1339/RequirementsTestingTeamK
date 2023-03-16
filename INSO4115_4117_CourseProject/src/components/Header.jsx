@@ -16,28 +16,26 @@ export default class Header extends Component {
   render() {
     return (
       <div className="nav-div">
-        <div className="nav-top row">
-          <div className="col-sm-3">
-            <img src={TeamLogo} />
-          </div>
-          <div className="col-sm-6 navbar-brand-div">
+        <div className="nav-top row navbar-brand">
+          <div className="col-sm-3 image">
             <Navbar.Brand href="/">
+              {" "}
+              <img src={TeamLogo} />
+            </Navbar.Brand>
+          </div>
+          <div className="col-sm-6 navbar-brand">
+            <Navbar.Brand href="/contact">
               {" "}
               <img src={Logo} />
             </Navbar.Brand>
           </div>
           <div className="col-sm-3 row align-middle">
-          <a type="button" className="btn btn-outline-secondary sign-in col-sm-6" href="/auth">
-              SIGN IN
-          </a>
-          <a type="button" className="btn btn-outline-secondary sign-in col-sm-6" href="/auth">
-              SIGN UP
-          </a>
+            <a type="button" className="btn  sign-in col-sm-12" href="/auth">
+              Sign In/Register
+            </a>
           </div>
         </div>
-        <div className="">
-
-        </div>
+        <div className=""></div>
 
         <Navbar className="custom" expand="lg">
           <Navbar.Toggle aria-controls="navbarScroll" />

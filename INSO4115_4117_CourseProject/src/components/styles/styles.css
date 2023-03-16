@@ -10,17 +10,31 @@ a:active {
   background-color: #fff;
 }
 
+.nav-div {
+  padding-bottom: 1%;
+}
+.nav-top {
+  justify-content: center;
+}
 .nav-top a {
   font-size: 1rem;
   color: #5a5a5a;
+  padding: 25px;
 }
 .nav-top .btn {
-  background-color: #0e180e;
+  border-radius: 25px;
+  width: 150px;
+  height: 50px;
+  margin: auto;
+  padding: 0;
+  line-height: 50px;
+  text-align: center;
+  display: flex;
+  background-color: #000000;
   color: #fff;
 }
-.nav-top img {
-  left: 5%;
-  top: 1%;
+.image {
+  justify-content: center;
 }
 .sign-in-container {
   align-items: center;
@@ -37,12 +51,12 @@ a:active {
   position: relative;
 }
 .custom {
-  padding: 1% 5% 1rem !important;
+  padding: 1% 2% 1rem !important;
   background-color: #242424;
 }
 
 img {
-  width: 4em; 
+  width: 4em;
 }
 
 .nav-div {
@@ -97,7 +111,7 @@ img {
 
 /*Filters*/
 .instructions h2 {
-  color:#000000;
+  color: #000000;
 }
 
 .imgBackground {
@@ -118,37 +132,50 @@ hr.divsection {
 .text-border {
   padding: 10px 25px;
 }
-.card title {
-  padding: 40px 0;
-  text-align: center;
+
+.filters-div {
+  font-family: "Oswald", sans-serif;
+  padding-top: 150px;
+  padding-bottom: 150px;
+}
+.filters-div h1 {
+  color: #00ab08;
+}
+.filters-div p {
+  padding: 0 5%;
+  color: #5a5a5a;
+}
+/*Modify filter area*/
+.dropdown-menu {
+  font-family: sans-serif;
+  height: auto;
+  width: 200px;
+  max-width: 300px;
+  margin-top: 1%;
+  max-height: 300px;
+  overflow-x: hidden;
+
+  background-color: red;
 }
 
-.card text {
-  padding: 0 30px;
+input[type="text"] {
+  width: 100%;
 }
-
-.card img {
-  position: relative;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  z-index: 1;
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
-  border: 7px solid #fff;
-  margin-top: -80px;
-}
-
-.card:hover .img {
-  border-color: darkcyan;
-  transition: 0.7s;
-}
-
 .map-stuff {
   background-color: #fff;
 }
-
+span {
+  text-align: center;
+}
+.filters {
+  padding: 0px;
+}
+.map-container {
+  padding-left: 50px;
+}
+.map-stuff {
+  padding: 0 70px;
+}
 .welcome {
   padding: 5% 30px 50px;
   box-shadow: 0 0 0.5px rgba(0, 0, 0, 0.5);
@@ -170,12 +197,13 @@ hr.divsection {
 .answer {
   padding-bottom: 2%;
 }
+
 .btn:hover {
   background-color: #00ab08 !important;
 }
 
 .home-section {
-  padding: 15% 25% 50px;
+  padding: 150px 25% 50px;
   text-align: center;
 }
 
@@ -354,4 +382,14 @@ p {
 a {
   text-decoration: none;
   color: #2c7715;
+}
+.footer-div {
+  background-color: #444444;
+  padding: 10px 0;
+  text-align: center;
+}
+
+.footer-div h1,
+p {
+  color: #fff;
 }
