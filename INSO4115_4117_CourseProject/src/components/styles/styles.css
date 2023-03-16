@@ -17,7 +17,7 @@ a:active {
 .nav-top a {
   font-size: 1rem;
   color: #5a5a5a;
-  padding: 25px;
+  padding: 25px 0;
 }
 .nav-top .btn {
   border-radius: 25px;
@@ -27,12 +27,18 @@ a:active {
   padding: 0;
   line-height: 50px;
   text-align: center;
-  display: flex;
+
   background-color: #000000;
   color: #fff;
 }
 .image {
   justify-content: center;
+}
+
+.home-div {
+  margin: 0;
+
+  padding: 0;
 }
 .sign-in-container {
   align-items: center;
@@ -171,9 +177,6 @@ span {
   padding-top: 100px;
   padding-left: 50px;
   padding-right: 50px;
-}
-.map-container {
-  padding-left: 50px;
 }
 
 .welcome {

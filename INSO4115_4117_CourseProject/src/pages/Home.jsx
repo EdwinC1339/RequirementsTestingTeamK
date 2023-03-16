@@ -11,10 +11,10 @@ import DG from "../images/dot-grid.png";
 export default class Home extends Component {
   render() {
     return (
-      <div>
+      <div className="home-div">
         <Header />
         <div
-          className="map-stuff row shadow p-3 mb-2 bg-white rounded"
+          className="map-stuff row "
           style={{ backgroundImage: `url(${DG})` }}
         >
           <div className="filters-container col-lg-5 ">
@@ -25,7 +25,7 @@ export default class Home extends Component {
           </div>
         </div>
         <div className="welcome ">
-          <div className="question shadow p-3 mb-5 bg-white rounded">
+          <div className="question ">
             <h1>WHAT IS CAN I EAT THERE?</h1>
 
             <p className="answer">

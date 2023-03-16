@@ -10,7 +10,7 @@ import * as dotenv from "dotenv";
 dotenv.config();
 
 const containerStyle = {
-  width: "80rem",
+  width: "70rem",
   height: "35rem",
 };
 

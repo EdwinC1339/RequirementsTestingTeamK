@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import Home from "./pages/Home.jsx";
 import Auth from "./pages/Auth.jsx";
 import Contact from "./pages/Contact.jsx";
