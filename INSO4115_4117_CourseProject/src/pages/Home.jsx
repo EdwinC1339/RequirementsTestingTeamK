@@ -11,7 +11,7 @@ import DG from "../images/dot-grid.png";
 export default class Home extends Component {
   render() {
     return (
-      <div className="home-div">
+      <div className="home-dive">
         <Header />
         <div
           className="map-stuff row "
@@ -25,7 +25,7 @@ export default class Home extends Component {
           </div>
         </div>
         <div className="welcome ">
-          <div className="question ">
+          <div className="question shadow p-3 mb-5 bg-white rounded">
             <h1>WHAT IS CAN I EAT THERE?</h1>
 
             <p className="answer">
