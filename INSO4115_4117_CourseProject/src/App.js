@@ -1,5 +1,6 @@
 import Home from "./pages/Home.jsx";
 import Auth from "./pages/Auth.jsx";
+import Profile from "./pages/Profile.jsx";
 import Contact from "./pages/Contact.jsx";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -13,6 +14,7 @@ function App() {
         {" "}
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/profile" element={<Profile />} />
 
           <Route path="/contact" element={<Contact />} />
 

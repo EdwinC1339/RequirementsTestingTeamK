@@ -46,16 +46,17 @@ export default class Header extends Component {
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
             <Nav className="m-auto" style={{ maxHeight: "100px" }} navbarScroll>
-              <Nav.Link as={Link} to="/contact">
+              <Nav.Link as={Link} to="/profile">
                 {/*Place a conditional here*/}
                 <FontAwesomeIcon icon={faUser} />
                 PROFILE
               </Nav.Link>
+              <div className="vr"></div>
               <Nav.Link as={Link} to="/contact">
                 <FontAwesomeIcon icon={faEnvelope} />
                 CONTACT
               </Nav.Link>
-
+              <div className="vr"></div>
               <NavDropdown title="+MORE" id="navbarScrollingDropdown">
                 <Nav.Link as={Link} to="/contact">
                   Contact
