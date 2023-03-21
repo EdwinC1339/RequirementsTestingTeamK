@@ -33,20 +33,21 @@ function Map() {
       fields: ["name", "geometry"],
     };
 
-    // let service = new google.maps.places.PlacesService(map);
+    const service = new google.maps.places.PlacesService(map);
+    const coords = [];
 
-    // service.findPlaceFromQuery(request, (results, status) => {
-    //   if (status === google.maps.places.PlacesServiceStatus.OK) {
-    //     for (var i = 0; i < results.length; i++) {
-    //       coords.push(results[i]);
-    //     }
+    service.findPlaceFromQuery(request, (results, status) => {
+      if (status === google.maps.places.PlacesServiceStatus.OK) {
+        for (var i = 0; i < results.length; i++) {
+          coords.push(results[i]);
+        }
 
-    //     this.setState({
-    //       center: results[0].geometry.location,
-    //       coordsResult: coords
-    //     });
-    //   }
-    // });
+        this.setState({
+          center: results[0].geometry.location,
+          coordsResult: coords
+        });
+      }
+    });
   }, []);
 
   const onUnmount = React.useCallback(function callback(map) {
