@@ -377,15 +377,39 @@ a {
   text-decoration: none;
   color: #2c7715;
 }
+
+/*Footer*/
 .footer-div {
   background-color: #242424;
   color: #fff;
-  padding: 20px 0;
+  padding: 20px 15px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
 }
 .footer-div h1 {
   font-family: "Oswald", sans-serif;
 }
+
+.footer-div hr {
+  border: 1px solid #fff;
+  width: 70%;
+  margin: 10px auto;
+}
+.short-info {
+  padding-top: 20px;
+  padding-bottom: 30px;
+}
+.form {
+  padding-top: 30px;
+}
+
+.copyright {
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+
 /*Profile*/
 .profile {
   height: 100vh;
@@ -468,4 +492,53 @@ a {
 .profile-filters h1 {
   color: #00ab08;
   font-family: "Oswald", sans-serif;
+}
+
+/*Contact Us*/
+.contact-us {
+  padding: 15px 10px;
+  justify-content: center;
+  display: flex;
+}
+.name-email {
+  padding-bottom: 10px;
+}
+.name-email label {
+  width: 60px;
+  clear: left;
+  text-align: right;
+  padding-right: 3px;
+}
+.name-email input {
+  margin-right: 3px;
+  width: 175px;
+}
+.message-area {
+  padding: 0 10px;
+}
+.message-label {
+  padding-bottom: 5px;
+}
+
+.message-label label {
+  clear: left;
+
+  text-align: right;
+}
+
+.text-area-message textarea {
+  width: 100%;
+  height: 300px;
+  resize: none;
+}
+
+.contact-us .btn {
+  background-color: black;
+  color: white;
+}
+.contact-us .btn:hover {
+  background-color: #00ab08 !important;
+}
+.submit {
+  padding-top: 10px;
 }
