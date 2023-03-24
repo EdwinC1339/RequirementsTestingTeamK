@@ -4,8 +4,12 @@ import {
   useJsApiLoader,
   Marker,
   InfoWindow,
+  LoadScript
 } from "@react-google-maps/api";
 import * as dotenv from "dotenv";
+// import google from 'googleapis'
+
+const google = window.google = window.google ? window.google : {}
 
 dotenv.config();
 
@@ -20,54 +24,20 @@ const center = {
 };
 
 function Map() {
-  const { isLoaded } = useJsApiLoader({
-    id: "google-map-script",
-    googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
-  });
-
-  const [map, setMap] = React.useState(null);
-
-  const onLoad = React.useCallback(function callback(map) {
-    let request = {
-      query: "Museum of Contemporary Art Australia",
-      fields: ["name", "geometry"],
-    };
-
-    const service = new google.maps.places.PlacesService(map);
-    const coords = [];
-
-    service.findPlaceFromQuery(request, (results, status) => {
-      if (status === google.maps.places.PlacesServiceStatus.OK) {
-        for (var i = 0; i < results.length; i++) {
-          coords.push(results[i]);
-        }
-
-        this.setState({
-          center: results[0].geometry.location,
-          coordsResult: coords
-        });
-      }
-    });
-  }, []);
-
-  const onUnmount = React.useCallback(function callback(map) {
-    setMap(null);
-  }, []);
-
-  return isLoaded ? (
-    <GoogleMap
-      mapContainerStyle={containerStyle}
-      center={center}
-      zoom={9}
-      onLoad={onLoad}
-      onUnmount={onUnmount}
+  return (
+    <LoadScript
+      googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}
     >
-      {/* Child components, such as markers, info windows, etc. */}
-      <></>
-    </GoogleMap>
-  ) : (
-    <></>
-  );
+      <GoogleMap
+        mapContainerStyle={containerStyle}
+        center={center}
+        zoom={10}
+      >
+        { /* Child components, such as markers, info windows, etc. */ }
+        <></>
+      </GoogleMap>
+    </LoadScript>
+  )
 }
 
 export default React.memo(Map);
