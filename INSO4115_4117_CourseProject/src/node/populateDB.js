@@ -14,17 +14,12 @@ dotenv.config({ path: envPath })
 const key = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
 
 
-async function getPlacesByID() {
-    const filename = 'restaurantIDs.json';
-    const places = [];
+async function getPlacesByID(sliceStart, client, allIDs) {
+    let places = [];
     try {
-        // Getting the first 50 IDs into an array
-        const data = fs.readFileSync(filename, 'utf8');
-        const jsonData = JSON.parse(data);
-        const IDs = Object.keys(jsonData.value).slice(0, 50);
-
-        // Create Google API Client
-        const client = new Client({});
+        // Getting 50 IDs into an array
+        const sliceEnd = Math.min(allIDs.length, sliceStart + 50);
+        const IDs = allIDs.slice(sliceStart, sliceEnd);
 
         // Hold our promises to resolve later
         const promises = [];
@@ -65,12 +60,24 @@ async function getPlacesByID() {
           });
 
 
+        if (sliceEnd !== allIDs.length) {
+            const nextPlaces = await callGetPlacesDelay(sliceEnd, client, allIDs);
+            places = places.concat(nextPlaces);
+        }
         return places;
 
     } catch (err) {
         console.error(`Error parsing JSON data from file: ${filename}`);
         console.error(err);
     }
+}
+
+async function callGetPlacesDelay(sliceStart, client, allIDs) {
+    return new Promise(function (resolve, reject) {
+        setTimeout(async function () {
+        resolve(await getPlacesByID(sliceStart, client, allIDs));
+        }, 50);
+    });
 }
 
 async function main() {
@@ -85,7 +92,15 @@ async function main() {
     }
     );
 
-    const places = await getPlacesByID();
+    // Create Google API Client
+    const client = new Client({});
+
+    const filename = 'restaurantIDs.json';
+    const data = fs.readFileSync(filename, 'utf8');
+    const jsonData = JSON.parse(data);
+    const allIDs = Object.keys(jsonData.value);
+
+    const places = await getPlacesByID(0, client, allIDs);
 
     Restaurant.collection.drop()
     .then(res => {
