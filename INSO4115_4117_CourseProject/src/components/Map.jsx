@@ -79,7 +79,22 @@ function Map() {
     // Keep this set to true. When it's false, it will search all the places from the Google API which is expensive
     const useDBPlaces = true;
     if (useDBPlaces) {
-      
+      /* TODO: 
+      Connect Mongoose to mongodb, copy that code from populateDB file. Make sure to do that in app.js so all components share the mongo client.
+      Find all the restaurants from the restaurant model. Can be done by importing the model from the schema file and running the mongoose find()
+      method.
+      Then, with the restaurants in an array of documents, find a way to put them in a dictionary with the following format:
+      {
+        <place_id>: {
+          geometry: {
+            lat: <double>
+            lng: <double>
+          }
+          name: <string>
+        }
+      }
+      Call setPlaces() with that dictionary that contains all the restaurants.
+      */ 
     } else {
       // searchPlaces(setPlaces, usePagination, mapInstance);
     }
