@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const Schema = mongoose.Schema;
 
-const restaurant = new Schema(
+const RestaurantSchema = new Schema(
   {
     name: {
       type: String,
@@ -13,9 +13,16 @@ const restaurant = new Schema(
       required: true,
       unique: true,
     },
-    coordinates: {
-      type: [Double],
-      required: true,
+    location: {
+      type: {
+        type: String,
+        enum: ['Point'],
+        required: true
+      },
+      coordinates: {
+        type: [Number], // LONGITUDE THEN LATITUDE
+        required: true
+      }
     },
     votes: {
       type: Object,
@@ -25,6 +32,5 @@ const restaurant = new Schema(
   { timestamps: true }
 );
 
-const Restaurant = mongoose.model("Restaurant", restaurant);
-
+const Restaurant = mongoose.model("Restaurant", RestaurantSchema);
 export default Restaurant;
