@@ -5,8 +5,7 @@ import Header from "../components/Header";
 import Map from "../components/Map";
 import Filters from "../components/Filters";
 import Footer from "../components/Footer";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import RS from "../images/repeated-square.png";
+
 import DG from "../images/dot-grid.png";
 export default class Home extends Component {
   render() {

@@ -28,7 +28,7 @@ export default class Header extends Component {
             </Navbar.Brand>
           </div>
           <div className="col-sm-6 navbar-brand">
-            <Navbar.Brand href="/contact">
+            <Navbar.Brand href="/">
               {" "}
               <img src={Logo} />
             </Navbar.Brand>
@@ -54,7 +54,7 @@ export default class Header extends Component {
               <div className="vr"></div>
               <Nav.Link as={Link} to="/contact">
                 <FontAwesomeIcon icon={faEnvelope} />
-                CONTACT
+                CONTACT US
               </Nav.Link>
               <div className="vr"></div>
               <NavDropdown title="+MORE" id="navbarScrollingDropdown">

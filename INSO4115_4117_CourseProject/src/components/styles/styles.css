@@ -406,7 +406,9 @@ a {
 
 .copyright {
   color: #fff;
-  padding: 20px 0;
+  padding-top: 50px;
+  padding-bottom: 1px;
+  font-size: 12px;
   text-align: center;
 }
 
@@ -517,6 +519,7 @@ a {
   padding: 0 10px;
 }
 .message-label {
+  padding-top: 50px;
   padding-bottom: 5px;
 }
 
@@ -531,7 +534,7 @@ a {
   height: 300px;
   resize: none;
 }
-
+/*Contact Us Section*/
 .contact-us .btn {
   background-color: black;
   color: white;
@@ -541,4 +544,62 @@ a {
 }
 .submit {
   padding-top: 10px;
+}
+/*Contact Page*/
+.contact-page {
+  height: 100vh;
+  min-height: 550px;
+
+  background-color: #eeeeee !important;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow-y: scroll;
+}
+
+.contact-page h1 {
+  padding-top: 50px;
+  padding-bottom: 10px;
+
+  font-family: Oswald, sans-serif;
+}
+.contact-div {
+  padding-bottom: 20px;
+}
+.contact-message {
+  padding: 0 250px;
+}
+.contact-message p {
+  color: #000000;
+  padding: 0px 50px 10px;
+
+  font-family: sans-serif;
+}
+.contact-message h1 {
+  font-size: 25px;
+  padding-top: 25px;
+}
+.message-section h1 {
+  font-size: 25px;
+}
+.contact-message h2 {
+  font-size: 1rem;
+  color: #5a5a5a;
+}
+.message-section {
+  padding-bottom: 20px;
+  background-color: #fff;
+}
+.email-section {
+  padding-bottom: 20px;
+}
+
+.contact-message .email {
+  background-color: #fff;
+  padding-bottom: 0;
+}
+.footer {
+  background-color: #242424;
+  padding-bottom: 2px;
 }
