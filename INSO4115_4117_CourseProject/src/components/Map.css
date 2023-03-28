@@ -1,14 +1,15 @@
 .map-container {
-    position: absolute;
+    position: relative;
+    height:65vh !important;
+    width: 100vh !important;
     top: 0;
     bottom: 0;
-    left: 0;
+    left: 0;  
     right: 0;
   }
   
   .sidebarStyle {
     display: inline-block;
-    position: absolute;
     top: 0;
     left: 0;
     margin: 12px;

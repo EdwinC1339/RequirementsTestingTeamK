@@ -10,10 +10,9 @@ mapboxgl.accessToken =
 
 const Map = () => {
   const mapContainerRef = useRef(null);
-
   const [lng, setLng] = useState(-66.4411);
   const [lat, setLat] = useState(18.28);
-  const [zoom, setZoom] = useState(9.25);
+  const [zoom, setZoom] = useState(9.10);
 
   // Initialize map when component mounts
   useEffect(() => {
@@ -32,6 +31,10 @@ const Map = () => {
       setLat(map.getCenter().lat.toFixed(4));
       setZoom(map.getZoom().toFixed(2));
     });
+
+    map.on('load', function () {
+      map.resize();
+  });
 
     // Clean up on unmount
     return () => map.remove();
