@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import "../components/styles/styles.css";
 import Header from "../components/Header";
-import Map from "../components/Map";
+import Map from "../components/Map.js";
 import Filters from "../components/Filters";
 import Footer from "../components/Footer";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";

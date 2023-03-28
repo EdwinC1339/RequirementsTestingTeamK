@@ -19,6 +19,7 @@
     "googleplaces": "^0.6.1",
     "http2": "^3.3.7",
     "jquery": "^3.6.4",
+    "mapbox-gl": "^2.13.0",
     "react": "^18.2.0",
     "react-bootstrap": "^2.7.2",
     "react-dom": "^18.2.0",
@@ -55,4 +56,5 @@
     "@cucumber/cucumber": "^9.0.0",
     "dotenv": "^16.0.3"
   }
+  
 }
