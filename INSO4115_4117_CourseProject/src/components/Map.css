@@ -1,6 +1,5 @@
 .map-container {
-    position: relative;
-    height:65vh !important;
+    height:60vh !important;
     width: 100vh !important;
     top: 0;
     bottom: 0;
@@ -12,7 +11,7 @@
     display: inline-block;
     top: 0;
     left: 0;
-    margin: 12px;
+    margin: 0px;
     background-color: #404040;
     color: #ffffff;
     z-index: 1 !important;
