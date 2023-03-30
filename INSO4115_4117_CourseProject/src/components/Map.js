@@ -7,7 +7,7 @@ import "./Map.css";
 import $ from 'jquery';
 
 const key =
-  "pk.eyJ1IjoiYWNldmVkb2MxNyIsImEiOiJjbGZzamJoeGYwNmwzM2dscXd4cnB3NHdwIn0.G2m7R5Q-853sLB3kr6pBbw";
+  "pk.eyJ1IjoiYWxvbnNvMTQiLCJhIjoiY2xmcm1scDM0MDVpMjN6bDhnenhleDI0dyJ9.WCGBtiA1Ij0EkiA6IpOgrA";
 mapboxgl.accessToken = key;
 
 const center = {
@@ -15,17 +15,21 @@ const center = {
   lng: -66.6398,
 };
 
-async function getPlaces(lat, lon, callback) {
+async function getPlaces(lat, lon, radius,) {
   // maybe change API to use https://nominatim.org/release-docs/develop/api/Reverse/
+
+  //tile query: https://api.mapbox.com/v4/mapbox.mapbox-streets-v8/tilequery/55.9414,54.7295.json?radius=25&limit=50&dedupe&geometry=point&layers=poi_label&access_token=
   let apiURL =
-    "https://api.mapbox.com/geocoding/v5/mapbox.places/" +
+    "https://api.mapbox.com/v4/mapbox.mapbox-streets-v8/tilequery/" +
     lon +
     "," +
     lat +
-    ".json?types=poi&access_token=" +
+    "radius=" + radius + 
+    ".json?&limit=50&dedupe=false&geometry=point&layers=poi_label&access_token=" +
     key;
-  //console.log(apiURL)
+  console.log("hooplaaaaaaaaaaaaaaaa",apiURL)
 
+  // can be chanded to fetch(url, {METHOD: "GET"})
   return ($.get(
     apiURL
   ))
@@ -44,16 +48,11 @@ async function searchPlaces(setPlaces)   {
       let lat = center.lat + yoffset;
       let lon = center.lng + xoffset;
   
-      let result = await getPlaces(lat, lon)
-      //console.log(result)
-
+      let result = await getPlaces(lat, lon, "1000")
+      console.log("hoopla fuck", result)
       const placesDict = {}
       for(let i = 0; i < result.features.length; i++){
-        console.log("hoopla i am hoopling")
-      
-        
 
-        console.log("hoopla")
         //check if rest. with result.features[i].properties.category == "restaurant" ?? 
         placesDict[result.features[i].place_id] = result.features[i].place_name
         console.log(result.features[i])
@@ -82,7 +81,7 @@ const Map = () => {
   useEffect(() => {
     const map = new mapboxgl.Map({
       container: mapContainerRef.current,
-      style: "mapbox://styles/acevedoc17/clfsjfv6e00cx01mxl400z732/draft",
+      style: "mapbox://styles/mapbox/streets-v12",
       center: [lng, lat],
       zoom: zoom,
     });
