@@ -54,7 +54,7 @@
   },
   "devDependencies": {
     "@cucumber/cucumber": "^9.0.0",
+    "@types/jquery": "^3.5.16",
     "dotenv": "^16.0.3"
   }
-  
 }
