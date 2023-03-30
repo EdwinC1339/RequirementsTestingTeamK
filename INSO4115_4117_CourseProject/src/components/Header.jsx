@@ -34,7 +34,11 @@ export default class Header extends Component {
             </Navbar.Brand>
           </div>
           <div className="col-sm-3 row align-middle">
-            <a type="button" className="btn  sign-in col-sm-12" href="/auth">
+            <a
+              type="button"
+              className="btn  sign-in col-sm-12"
+              href="/register"
+            >
               <FontAwesomeIcon icon={faRightToBracket} />
               Sign In/Register
             </a>
