@@ -1,5 +1,3 @@
-
-import $ from "jquery";
 // Interface to define Center Object
 interface Center {
   lat: number;
@@ -14,12 +12,19 @@ const center: Center = {
 
 // Create apiURL string
 const apiURL: string = ""
-
+const key: string = "pk.eyJ1IjoiYWxvbnNvMTQiLCJhIjoiY2xmcm1scDM0MDVpMjN6bDhnenhleDI0dyJ9.WCGBtiA1Ij0EkiA6IpOgrA";
 // Get Places helper function, returns a Promise
 async function getPlaces(lat: number, lon: number, radius: string, apiURL: string): Promise<any> {
-
+  apiURL =
+  "https://api.mapbox.com/v4/mapbox.mapbox-streets-v8/tilequery/" +
+  lon +
+  "," +
+  lat +
+  "&radius=" + radius + 
+  ".json?limit=50&layers=poi_label&access_token=" +
+  key;
   try {
-    let result = await $.get(apiURL);
+    let result = (await fetch(apiURL, {method: "GET"})).json();
     return result;
   } catch (error) {
     console.error(error);

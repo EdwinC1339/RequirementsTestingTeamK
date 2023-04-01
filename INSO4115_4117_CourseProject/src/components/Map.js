@@ -4,7 +4,6 @@ import React, { useRef, useEffect, useState } from "react";
 // eslint-disable-line import/no-webpack-loader-syntax;
 import mapboxgl from "!mapbox-gl";
 import "./Map.css";
-import $ from 'jquery';
 
 const key =
   "pk.eyJ1IjoiYWxvbnNvMTQiLCJhIjoiY2xmcm1scDM0MDVpMjN6bDhnenhleDI0dyJ9.WCGBtiA1Ij0EkiA6IpOgrA";
@@ -28,7 +27,7 @@ async function getPlaces(lat, lon, radius) {
     key;
 
   try {
-    let result = await $.get(apiURL);
+    let result = (await fetch(apiURL, {method: "GET"})).json()
     return result;
   } catch (error) {
     console.error(error);
