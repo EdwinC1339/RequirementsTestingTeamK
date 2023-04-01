@@ -6,12 +6,10 @@ class Register extends Component {
     super();
     this.state = {
       firstName: "",
-      username: "",
       email: "",
       password: "",
     };
     this.changeFullName = this.changeFullName.bind(this);
-    this.changeUsername = this.changeUsername.bind(this);
     this.changeEmail = this.changeEmail.bind(this);
     this.changePassword = this.changePassword.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
@@ -20,11 +18,6 @@ class Register extends Component {
   changeFullName(event) {
     this.setState({
       fullName: event.target.value,
-    });
-  }
-  changeUsername(event) {
-    this.setState({
-      username: event.target.value,
     });
   }
   changeEmail(event) {
@@ -41,7 +34,6 @@ class Register extends Component {
     event.preventDefault();
     const registered = {
       fullName: this.state.fullName,
-      username: this.state.username,
       email: this.state.email,
       password: this.state.password,
     };
@@ -62,14 +54,6 @@ class Register extends Component {
                 placeholder="Full Name"
                 onChange={this.changeFullName}
                 value={this.state.fullName}
-                className="form-control form-group"
-              />
-
-              <input
-                type="text"
-                placeholder="Username"
-                onChange={this.changeUsername}
-                value={this.state.username}
                 className="form-control form-group"
               />
 
