@@ -11,33 +11,35 @@ const key =
 mapboxgl.accessToken = key;
 
 const center = {
-  lat: 17.9967,
-  lng: -66.6398,
+  lat: 28.1243,
+  lng: -81.5777,
 };
 
-async function getPlaces(lat, lon, radius,) {
-  // maybe change API to use https://nominatim.org/release-docs/develop/api/Reverse/
 
-  //tile query: https://api.mapbox.com/v4/mapbox.mapbox-streets-v8/tilequery/55.9414,54.7295.json?radius=25&limit=50&dedupe&geometry=point&layers=poi_label&access_token=
+
+async function getPlaces(lat, lon, radius) {
   let apiURL =
     "https://api.mapbox.com/v4/mapbox.mapbox-streets-v8/tilequery/" +
     lon +
     "," +
     lat +
-    "radius=" + radius + 
-    ".json?&limit=50&dedupe=false&geometry=point&layers=poi_label&access_token=" +
+    "&radius=" + radius + 
+    ".json?limit=50&layers=poi_label&access_token=" +
     key;
-  console.log("hooplaaaaaaaaaaaaaaaa",apiURL)
 
-  // can be chanded to fetch(url, {METHOD: "GET"})
-  return ($.get(
-    apiURL
-  ))
-};
+  try {
+    let result = await $.get(apiURL);
+    return result;
+  } catch (error) {
+    console.error(error);
+    return null;
+  }
+}
+
 
 
 async function searchPlaces(setPlaces)   {
-  console.log("HOOPLA!!!!!!!!!!!!!!!!!!!!")
+  //console.log("HOOPLA!!!!!!!!!!!!!!!!!!!!")
   const width = 0.8;
   const xSegments = 80;
   const height = 0.2;
@@ -47,15 +49,15 @@ async function searchPlaces(setPlaces)   {
       
       let lat = center.lat + yoffset;
       let lon = center.lng + xoffset;
-  
-      let result = await getPlaces(lat, lon, "1000")
-      console.log("hoopla fuck", result)
+   
+      let result = await getPlaces(lat, lon, "100")
+      console.log(result)
       const placesDict = {}
       for(let i = 0; i < result.features.length; i++){
 
         //check if rest. with result.features[i].properties.category == "restaurant" ?? 
         placesDict[result.features[i].place_id] = result.features[i].place_name
-        console.log(result.features[i])
+        //console.log(result.features[i])
           
         // const marker = new mapboxgl.Marker()
         // .setLngLat([result.features[i].center[0], result.features[i].center[1]])
@@ -63,7 +65,7 @@ async function searchPlaces(setPlaces)   {
           
       }
       
-      setPlaces(prevPlaces => Object.assign({}, prevPlaces, placesDict));  
+      setPlaces(prevPlaces => ({...prevPlaces, ...placesDict}));  
     }
       
   }
