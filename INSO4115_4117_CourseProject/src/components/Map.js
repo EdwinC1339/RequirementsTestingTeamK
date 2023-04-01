@@ -10,8 +10,8 @@ const key =
 mapboxgl.accessToken = key;
 
 const center = {
-  lat: 28.1243,
-  lng: -81.5777,
+  lat:  18.46633000,
+  lng: -66.10572000,
 };
 
 
@@ -22,8 +22,8 @@ async function getPlaces(lat, lon, radius) {
     lon +
     "," +
     lat +
-    "&radius=" + radius + 
-    ".json?limit=50&layers=poi_label&access_token=" +
+    ".json?limit=50&layers=poi_label&&radius=" + radius + 
+    "&access_token=" + 
     key;
 
   try {
@@ -49,13 +49,17 @@ async function searchPlaces(setPlaces)   {
       let lat = center.lat + yoffset;
       let lon = center.lng + xoffset;
    
-      let result = await getPlaces(lat, lon, "100")
-      console.log(result)
+      let result = await getPlaces(lat, lon, "1000")
       const placesDict = {}
       for(let i = 0; i < result.features.length; i++){
+        
+        if (result.features[i].properties.class === "food_and_drink"){
+          
+          console.log(result.features[i].properties.class);
+          //check if rest. with result.features[i].properties.category == "restaurant" ?? 
+          placesDict[result.features[i].place_id] = result.features[i].properties.name;
 
-        //check if rest. with result.features[i].properties.category == "restaurant" ?? 
-        placesDict[result.features[i].place_id] = result.features[i].place_name
+        }
         //console.log(result.features[i])
           
         // const marker = new mapboxgl.Marker()
