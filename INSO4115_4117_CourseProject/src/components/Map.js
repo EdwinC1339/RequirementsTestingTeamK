@@ -22,7 +22,7 @@ async function getPlaces(lat, lon, radius) {
     lon +
     "," +
     lat +
-    ".json?limit=50&layers=poi_label&&radius=" + radius + 
+    ".json?limit=50&layers=poi_label&radius=" + radius + 
     "&access_token=" + 
     key;
 
