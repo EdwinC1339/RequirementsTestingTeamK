@@ -14,8 +14,8 @@ const center: Center = {
 const apiURL: string = ""
 const key: string = "pk.eyJ1IjoiYWxvbnNvMTQiLCJhIjoiY2xmcm1scDM0MDVpMjN6bDhnenhleDI0dyJ9.WCGBtiA1Ij0EkiA6IpOgrA";
 // Get Places helper function, returns a Promise
-async function getPlaces(lat: number, lon: number, radius: string, apiURL: string): Promise<any> {
-  apiURL =
+async function getPlaces(lat: number, lon: number, radius: string): Promise<any> {
+  let apiURL: string =
   "https://api.mapbox.com/v4/mapbox.mapbox-streets-v8/tilequery/" +
   lon +
   "," +
@@ -40,7 +40,7 @@ async function searchPlaces(setPlaces: any, width: number, xSegments: number, he
     for (let yoffset = -height; yoffset < height; yoffset += (height / ySegments) * 2) {
       let lat = center.lat + yoffset;
       let lon = center.lng + xoffset;
-      let result = await getPlaces(lat, lon, "100", apiURL);
+      let result = await getPlaces(lat, lon, "100");
       console.log(result);
       const placesDict: { [key: string]: string } = {};
       for (let i = 0; i < result.features.length; i++) {
