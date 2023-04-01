@@ -23,7 +23,7 @@ async function getPlaces(lat, lon, radius) {
     lon +
     "," +
     lat +
-    ".json?limit=50&layers=poi_label&&radius=" + radius + 
+    ".json?limit=50&layers=poi_label&radius=" + radius + 
     "&access_token=" + 
     key;
 
@@ -44,6 +44,7 @@ async function searchPlaces(setPlaces, Map)   {
   const xSegments = 80;
   const height = 0.2;
   const ySegments = 50;
+  const placesDict = {}
   for (let xoffset = -width; xoffset < width; xoffset += (width / xSegments) * 2) {
     for (let yoffset = -height; yoffset < height; yoffset += (height / ySegments) * 2) {
       
@@ -51,7 +52,6 @@ async function searchPlaces(setPlaces, Map)   {
       let lon = center.lng + xoffset;
    
       let result = await getPlaces(lat, lon, "1000")
-      const placesDict = {}
       for(let i = 0; i < result.features.length; i++){
         
         if (result.features[i].properties.class === "food_and_drink"){
@@ -62,12 +62,8 @@ async function searchPlaces(setPlaces, Map)   {
           //check if rest. with result.features[i].properties.category == "restaurant" ?? 
           placesDict[result.features[i].place_id] = result.features[i].properties.name;
 
+          //addMarker(result.features[i]);
         }
-        //console.log(result.features[i])
-          
-        // const marker = new mapboxgl.Marker()
-        // .setLngLat([result.features[i].center[0], result.features[i].center[1]])
-        // .addTo(Map);
           
       }
       
@@ -75,9 +71,16 @@ async function searchPlaces(setPlaces, Map)   {
     }
       
   }
+  console.log('done!!!!!!!!!!')
+  console.log(Object.keys(placesDict).length);
 };
 
+const addMarker = async feature => {
 
+  const marker =  new mapboxgl.Marker()
+        .setLngLat([feature.geometry.coordinates[0], feature.geometry.coordinates[1]])
+        .addTo(Map);
+}
 const Map = () => {
   const mapContainerRef = useRef(null);
   const [lng, setLng] = useState(-66.4411);
