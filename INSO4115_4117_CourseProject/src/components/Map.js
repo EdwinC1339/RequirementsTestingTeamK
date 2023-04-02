@@ -2,7 +2,7 @@
 
 import React, { useRef, useEffect, useState } from "react";
 // eslint-disable-line import/no-webpack-loader-syntax;
-import mapboxgl from "!mapbox-gl";
+import mapboxgl from "mapbox-gl";
 import 'mapbox-gl/dist/mapbox-gl.css'
 import "./Map.css";
 import {municipalities} from './municipalities.json'
@@ -173,4 +173,4 @@ const Map = () => {
   );
 };
 
-export default Map;
+export {Map, getTown, getPlaces, searchPlaces};

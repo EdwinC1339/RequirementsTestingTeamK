@@ -1,11 +1,6 @@
 import Restaurant from "../src/node/restaurant.js" 
 import util from "./util.js"
 
-var fulfill1 = {
-    "Kosher": true,
-    "Vegan": false,
-    "Nut": false
-}
 var fulfill2 = {
     "Kosher": false,
     "Vegan": false,
@@ -18,7 +13,35 @@ var fulfill3 = {
     "Lactose Intolerant": true,
     "Gluten Free": true
 }
-var dummy1 = new Restaurant("FlavorCo", [142.4, 21.5], fulfill1)
+
+test('Dummy restaurant 1', () => {
+    const fulfill = {
+        "Kosher": true,
+        "Vegan": false,
+        "Nut": false
+    }
+    const dummy = new Restaurant("FlavorCo", [142.4, 21.5], fulfill1)
+    expect(dummy.fulfills("Kosher")).toBeTruthy();
+    expect(dummy.fulfills("Vegan")).toBeFalsy();
+    expect(dummy.fulfills("Nut")).toBeFalsy();
+})
+
+test('Dummy restaurant 2', () => {
+    const fulfill = {
+        "Kosher": false,
+        "Vegan": false,
+        "Nut": false
+    }
+    const dummy = new Restaurant("Leamsi Cooking Ltd", [12.5, 21.3], fulfill1)
+    expect(dummy.fulfills("Kosher")).toBeTruthy();
+    expect(dummy.fulfills("Vegan")).toBeFalsy();
+    expect(dummy.fulfills("Nut")).toBeFalsy();
+})
+
+test('Dummy restaurant 3', () => {
+
+})
+
 var dummy2 = new Restaurant("Leamsi Cooking Ltd", [12.5, 21.3], fulfill2)
 var dummy3 = new Restaurant("Godspeed You", [13, 12.1], fulfill3)
 
