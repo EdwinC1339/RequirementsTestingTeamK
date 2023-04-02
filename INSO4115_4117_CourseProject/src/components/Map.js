@@ -3,6 +3,7 @@
 import React, { useRef, useEffect, useState } from "react";
 // eslint-disable-line import/no-webpack-loader-syntax;
 import mapboxgl from "!mapbox-gl";
+import 'mapbox-gl/dist/mapbox-gl.css'
 import "./Map.css";
 
 const key =
@@ -37,7 +38,7 @@ async function getPlaces(lat, lon, radius) {
 
 
 
-async function searchPlaces(setPlaces)   {
+async function searchPlaces(setPlaces, Map)   {
   //console.log("HOOPLA!!!!!!!!!!!!!!!!!!!!")
   const width = 0.8;
   const xSegments = 80;
@@ -54,7 +55,9 @@ async function searchPlaces(setPlaces)   {
       for(let i = 0; i < result.features.length; i++){
         
         if (result.features[i].properties.class === "food_and_drink"){
-          
+          const el = document.createElement('div')
+          el.className = 'marker'
+          new mapboxgl.Marker(el).setLngLat(result.features[i].geometry.coordinates).addTo(Map)
           console.log(result.features[i]);
           //check if rest. with result.features[i].properties.category == "restaurant" ?? 
           placesDict[result.features[i].place_id] = result.features[i].properties.name;
@@ -82,7 +85,7 @@ const Map = () => {
   const mapContainerRef = useRef(null);
   const [lng, setLng] = useState(-66.4411);
   const [lat, setLat] = useState(18.28);
-  const [zoom, setZoom] = useState(9.1);
+  const [zoom, setZoom] = useState(8.5);
   const [places, setPlaces] = useState({}) // initially empty
 
   // Initialize map when component mounts
@@ -92,6 +95,7 @@ const Map = () => {
       style: "mapbox://styles/mapbox/streets-v12",
       center: [lng, lat],
       zoom: zoom,
+      projection: { name: "mercator" }
     });
 
     // Add navigation control (the +/- zoom buttons)
@@ -104,8 +108,31 @@ const Map = () => {
     });
 
     map.on("load", function() {
+      // const geojson = {
+      //   'type': 'FeatureCollection',
+      //   'features': [
+      //   {
+      //   'type': 'Feature',
+      //   'geometry': {
+      //   'type': 'Point',
+      //   'coordinates': [-66.10572000, 18.46633000]
+      //   },
+      //   'properties': {
+      //   'title': 'Mapbox',
+      //   'description': 'San Francisco, California'
+      //   }
+      //   }
+      //   ]
+      //   };
+      
+      // const el = document.createElement('div');
+      // el.className = 'marker';
+      // new mapboxgl.Marker(el).setLngLat(geojson.features[0].geometry.coordinates).setPopup(new mapboxgl.Popup({offset:25}).setHTML(
+      //   `<h3>${geojson.features[0].properties.title}</h3><p>${geojson.features[0].properties.description}</p>`
+      //   )).addTo(map)
+      // console.log(map)
       map.resize();
-      searchPlaces(setPlaces);
+      searchPlaces(setPlaces, map);
       
     });
 
