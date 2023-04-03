@@ -65,3 +65,5 @@ async function searchPlaces(setPlaces: Function, width: number, xSegments: numbe
     }
   }
 }
+
+export {}

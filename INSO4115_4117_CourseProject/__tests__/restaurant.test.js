@@ -1,5 +1,5 @@
 import Restaurant from "../src/node/restaurant.js" 
-import util from "./util.js"
+import util from "../src/util.js"
 
 test('Dummy restaurant 1', () => {
     const fulfill = {

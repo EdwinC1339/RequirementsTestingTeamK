@@ -10,8 +10,7 @@
   "coverageAnalysis": "off",
   "jest": {
     "projectType": "custom",
-    "configFile": "./jest.config.js",
     "enableFindRelatedTests": true
   },
-  "tempDirName": "stryker-tmp"
+  "tempDirName": "strykerTmp"
 }
