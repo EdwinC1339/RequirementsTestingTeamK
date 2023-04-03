@@ -4,7 +4,18 @@ import jest from 'jest'
 
 import {getPlaces, getTown, Map} from '../src/components/Map.js'
 
+beforeEach(() => {
+    fetch.resetMocks();
+});
+
+const dummy = {name : "dummy feature"}
+
 test('getPlaces returns at least 1 place in San Juan', async () => {
+    fetch.mockResponceOnce(JSON.stringify({
+        features: [
+            dummy
+        ]
+    }));
     getPlaces(18.412025, -66.026585, 1000, 0).then(result => {
         const feature_length = result.features.length;
         expect(feature_length).toBeGreaterThanOrEqual(1);
@@ -12,6 +23,11 @@ test('getPlaces returns at least 1 place in San Juan', async () => {
 });
 
 test('getPlaces returns at least 1 place in Humacao', async () => {
+    fetch.mockResponceOnce(JSON.stringify({
+        features: [
+            dummy
+        ]
+    }));
     getPlaces(18.150081, -65.827286, 1000, 0).then(result => {
         const feature_length = result.features.length;
         expect(feature_length).toBeGreaterThanOrEqual(1);
@@ -19,6 +35,11 @@ test('getPlaces returns at least 1 place in Humacao', async () => {
 });
 
 test('getPlaces returns at least 1 place in Ponce', async () => {
+    fetch.mockResponceOnce(JSON.stringify({
+        features: [
+            dummy
+        ]
+    }));
     getPlaces(18.009049, -66.596319, 1000, 0).then(result => {
         const feature_length = result.features.length;
         expect(feature_length).toBeGreaterThanOrEqual(1);
@@ -26,6 +47,11 @@ test('getPlaces returns at least 1 place in Ponce', async () => {
 });
 
 test('getPlaces returns at least 1 place in Mayagüez', async () => {
+    fetch.mockResponceOnce(JSON.stringify({
+        features: [
+            dummy
+        ]
+    }));
     getPlaces(18.203009, -67.145275, 1000, 0).then(result => {
         const feature_length = result.features.length;
         expect(feature_length).toBeGreaterThanOrEqual(1);
