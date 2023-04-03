@@ -32,3 +32,34 @@ test('getPlaces returns at least 1 place in Mayagüez', async () => {
     });
 });
 
+test('getTown finds the town of a restaurant in Cidra', async () => {
+    const [lat, lon] = [18.17652648618649, -66.16579249618928];
+    getTown([
+        lon,
+        lat
+    ]).then(town => expect(town).toEqual("Cidra"));
+})
+
+test('getTown finds the town of a restaurant in Lares', async () => {
+    const [lat, lon] = [18.294479009006434, -66.87748836709393];
+    getTown([
+        lon,
+        lat
+    ]).then(town => expect(town).toEqual("Lares"));
+})
+
+test('getTown finds the town of a restaurant in Arecibo', async () => {
+    const [lat, lon] = [18.437000598160765, -66.71322572616934];
+    getTown([
+        lon,
+        lat
+    ]).then(town => expect(town).toEqual("Arecibo"));
+})
+
+test('getTown finds the town of a restaurant in Aguada', async () => {
+    const [lat, lon] = [18.386663164194506, -67.17364732018436];
+    getTown([
+        lon,
+        lat
+    ]).then(town => expect(town).toEqual("Aguada"));
+})
