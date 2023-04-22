@@ -6,7 +6,6 @@ import { getPlaces, getTown } from "../src/components/Map.js";
 
 beforeEach(() => {
   fetch.resetMocks();
-
 });
 
 const dummy = { name: "dummy feature" };
@@ -59,10 +58,18 @@ test("getPlaces returns at least 1 place in Mayagüez", async () => {
   });
 });
 
-const dummyCidra = { place_name: "dummy feature, street, Cidra, Puerto Rico 00392" };
-const dummyLares = { place_name: "dummy feature, street, Lares, Puerto Rico, 00392" };
-const dummyArecibo = { place_name: "dummy feature, street, Arecibo , Puerto Rico 00392" };
-const dummyAguada = { place_name: "dummy feature, street,Aguada, Puerto Rico 00392" };
+const dummyCidra = {
+  place_name: "dummy feature, street, Cidra, Puerto Rico 00392",
+};
+const dummyLares = {
+  place_name: "dummy feature, street, Lares, Puerto Rico, 00392",
+};
+const dummyArecibo = {
+  place_name: "dummy feature, street, Arecibo , Puerto Rico 00392",
+};
+const dummyAguada = {
+  place_name: "dummy feature, street,Aguada, Puerto Rico 00392",
+};
 test("getTown finds the town of a restaurant in Cidra", async () => {
   fetch.mockResponseOnce(
     JSON.stringify({

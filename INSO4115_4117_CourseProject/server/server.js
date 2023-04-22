@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const routesUrls = require("./routes/routes");
 const cors = require("cors");
+global.TextDecoder = require("util").TextDecoder;
 
 dotenv.config();
 

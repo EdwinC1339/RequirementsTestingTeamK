@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Filters should render a dropdown list of items 1`] = `
+<div
+  className="filters-div "
+>
+  <h1>
+    SELECT YOUR RESTRICTIONS
+  </h1>
+  <p>
+    Select from an extensive list of dietary restrictions to be able to choose the food service that suits your needs
+  </p>
+  <div
+    className="dropdown"
+  >
+    <button
+      aria-expanded={false}
+      className="dropdown-toggle btn btn-success"
+      disabled={false}
+      id="dropdown-basic"
+      onClick={[Function]}
+      type="button"
+    >
+      Restriction Selection
+    </button>
+  </div>
+</div>
+`;
