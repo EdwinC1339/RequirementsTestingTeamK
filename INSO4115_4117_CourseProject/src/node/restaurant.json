@@ -1,0 +1,32 @@
+[
+  {
+    "id": "don-maceta",
+    "name": "Don Maceta",
+    "location": "Aguada, Puerto Rico",
+    "reviews": [
+      {
+        "rating": 4,
+        "review": "The food was delicious and the service was great!"
+      },
+      {
+        "rating": 5,
+        "review": "Amazing experience! Highly recommend the empanadas."
+      }
+    ]
+  },
+  {
+    "id": "acai-express",
+    "name": "Acai Express",
+    "location": "Mayaguez, Puerto Rico",
+    "reviews": [
+      {
+        "rating": 5,
+        "review": "Delicious acai bowls and great customer service!"
+      },
+      {
+        "rating": 4,
+        "review": "The smoothies were very refreshing, but a bit pricey."
+      }
+    ]
+  }
+]

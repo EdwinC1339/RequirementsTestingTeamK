@@ -1,11 +1,10 @@
 import React, { Component } from "react";
-import axios from "axios";
 
 class Register extends Component {
   constructor() {
     super();
     this.state = {
-      firstName: "",
+      fullName: "",
       email: "",
       password: "",
     };
@@ -20,16 +19,19 @@ class Register extends Component {
       fullName: event.target.value,
     });
   }
+
   changeEmail(event) {
     this.setState({
       email: event.target.value,
     });
   }
+
   changePassword(event) {
     this.setState({
       password: event.target.value,
     });
   }
+
   onSubmit(event) {
     event.preventDefault();
     const registered = {
@@ -37,10 +39,29 @@ class Register extends Component {
       email: this.state.email,
       password: this.state.password,
     };
-    axios
-      .post("http://localhost:4000/api/signup ", registered)
-      .then((response) => console.log(response.data));
-    window.location = "/";
+    console.log("Registered:", registered);
+    fetch("http://localhost:4000/api/signup", {
+      method: "POST",
+      body: JSON.stringify(registered),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(response.statusText);
+        }
+        console.log("Response:", response);
+        return response.json();
+      })
+      .then((data) => {
+        console.log("Data:", data);
+        this.props.setIsAuthenticated(true);
+        window.location = "/";
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   }
 
   render() {
@@ -84,4 +105,5 @@ class Register extends Component {
     );
   }
 }
+
 export default Register;

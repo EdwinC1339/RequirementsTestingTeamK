@@ -1,14 +1,17 @@
 import React, { Component } from "react";
-
+import { Link } from "react-router-dom";
 import "../components/styles/styles.css";
 import Header from "../components/Header";
-import {Map} from "../components/Map.js";
+import { Map } from "../components/Map.js";
 import Filters from "../components/Filters";
 import Footer from "../components/Footer";
-
 import DG from "../images/dot-grid.png";
+import Rating from "../components/Rating";
+
 export default class Home extends Component {
   render() {
+    const token = localStorage.getItem("token");
+
     return (
       <div className="home-div">
         <Header />
@@ -17,7 +20,7 @@ export default class Home extends Component {
           style={{ backgroundImage: `url(${DG})` }}
         >
           <div className="filters-container col-lg-5 ">
-            <Filters />
+            <Filters /> <Rating />
           </div>
           <div className="map-container col-lg-7 d-flex justify-content-center">
             <Map />
@@ -53,6 +56,9 @@ export default class Home extends Component {
               </div>
             </div>
           </div>
+          <p>Your token is: {token}</p>
+
+          <Link to="/profile">Go to profile</Link>
         </div>
         <Footer />
       </div>
