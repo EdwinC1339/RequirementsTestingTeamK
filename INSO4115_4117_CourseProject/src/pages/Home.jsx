@@ -9,6 +9,11 @@ import DG from "../images/dot-grid.png";
 import Rating from "../components/Rating";
 
 export default class Home extends Component {
+  state = {
+    restaurantName: "",
+    restaurantLocation: "",
+  };
+
   render() {
     const token = localStorage.getItem("token");
 
@@ -20,7 +25,7 @@ export default class Home extends Component {
           style={{ backgroundImage: `url(${DG})` }}
         >
           <div className="filters-container col-lg-5 ">
-            <Filters /> <Rating />
+            <Filters />
           </div>
           <div className="map-container col-lg-7 d-flex justify-content-center">
             <Map />

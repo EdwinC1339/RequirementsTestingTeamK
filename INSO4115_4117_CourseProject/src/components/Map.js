@@ -5,6 +5,9 @@ import mapboxgl from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 import "./Map.css";
 import municipalitiesJSON from "./municipalities.json";
+import RatingComponent from "./Rating.jsx";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.min.js";
 
 const key =
   "pk.eyJ1IjoiYWxvbnNvMTQiLCJhIjoiY2xmcm1scDM0MDVpMjN6bDhnenhleDI0dyJ9.WCGBtiA1Ij0EkiA6IpOgrA";
@@ -117,6 +120,8 @@ const Map = () => {
   const municipalities = municipalitiesJSON.municipalities;
   municipalities.forEach((m) => (pbm[m] = []));
   const [placesByMunicipality, setPlacesByMunicipality] = useState(pbm); // Maps from each of the 78 municipality to an array of places
+  const [currentPlace, setCurrentPlace] = useState({ name: "", location: "" });
+  const [showRating, setShowRating] = useState(false); // state to track whether to show the RatingComponent
 
   // Initialize map when component mounts
   useEffect(() => {
@@ -142,7 +147,7 @@ const Map = () => {
     m.on("load", function () {
       console.log(municipalities);
       m.resize();
-      searchPlaces(setPlaces);
+      searchPlaces(setPlaces, m);
     });
 
     // Clean up on unmount
@@ -151,36 +156,104 @@ const Map = () => {
 
   useEffect(() => {
     const markers = [];
-    Object.values(places).forEach((place) => {
+
+    Object.values(places).forEach(async (place) => {
       const el = <div className="marker"></div>;
       const marker = new mapboxgl.Marker(el)
         .setLngLat(place.geometry.coordinates)
         .addTo(map);
-      markers.push(marker);
-      getTown(place.geometry.coordinates)
-        .then((town) =>
-          setPlacesByMunicipality((prevState) => {
-            console.log(prevState);
-            const prevTownContent = prevState[town];
-            const newPlaces = [...prevTownContent, place];
-            return Object.assign({}, prevState, { [town]: newPlaces });
+
+      marker.getElement().addEventListener("click", async () => {
+        console.log("Marker clicked");
+        console.log("Current showRating state: ", showRating);
+        setShowRating(true);
+        const town = await getTown(place.geometry.coordinates);
+
+        console.log(
+          `Name: ${place.properties.name}, Location: ${place.geometry.coordinates}, Municipality: ${town}`
+        );
+
+        // Make a POST request to add the restaurant
+        fetch("http://localhost:4000/api/add-restaurant", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name: place.properties.name,
+            location: town,
+          }),
+        })
+          .then((response) => {
+            if (response.ok) {
+              console.log("Restaurant added successfully");
+            } else {
+              console.log("Failed to add restaurant");
+            }
           })
-        )
-        .catch((err) => console.error(err));
+          .catch((error) => {
+            console.error("Error adding restaurant", error);
+          });
+
+        setCurrentPlace({ name: place.properties.name, location: town });
+      });
+
+      markers.push(marker);
+
+      const town = await getTown(place.geometry.coordinates);
+      setPlacesByMunicipality((prevState) => {
+        const prevTownContent = prevState[town];
+        const newPlaces = [...prevTownContent, place];
+        return Object.assign({}, prevState, { [town]: newPlaces });
+      });
     });
+
     return () => {
       markers.forEach((marker) => marker.remove());
     };
   }, [places]);
 
+  useEffect(() => {
+    console.log("Current showRating state: ", showRating);
+  }, [showRating]);
+
+  useEffect(() => {
+    console.log("Current place changed: ", currentPlace);
+  }, [currentPlace]);
   return (
-    <div>
-      <div className="sidebarStyle">
-        <div>
-          Longitude: {lng} | Latitude: {lat} | Zoom: {zoom}
+    <div className="map-area">
+      <div className="row">
+        {showRating && (
+          <div className="col-4">
+            <div className="container">
+              <div className="rating">
+                <RatingComponent
+                  restaurantName={currentPlace.name}
+                  location={currentPlace.location}
+                />
+                <button
+                  className="btn btn-success"
+                  onClick={() => setShowRating(!showRating)}
+                >
+                  X
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
+        <div className={showRating ? "col-8" : "col-12"}>
+          <div className="sidebarStyle">
+            <div>
+              Longitude: {lng} | Latitude: {lat} | Zoom: {zoom}
+            </div>
+          </div>
+          <div
+            className="map-container"
+            ref={mapContainerRef}
+            style={{ width: showRating ? "60%" : "auto" }}
+          />
         </div>
       </div>
-      <div className="map-container" ref={mapContainerRef} />
     </div>
   );
 };

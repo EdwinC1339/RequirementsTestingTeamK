@@ -28,5 +28,212 @@
         "review": "The smoothies were very refreshing, but a bit pricey."
       }
     ]
+  },
+  {
+    "id": "cafe-nativo",
+    "name": "Cafe Nativo",
+    "location": "Jayuya",
+    "reviews": []
+  },
+  {
+    "id": "santin-s-pizza",
+    "name": "Santin’s Pizza",
+    "location": "San Lorenzo",
+    "reviews": []
+  },
+  {
+    "id": "cafeter-a-mart-nez",
+    "name": "Cafetería Martínez",
+    "location": "Lares",
+    "reviews": [
+      {
+        "rating": 5,
+        "review": "Rico "
+      },
+      {
+        "rating": 5,
+        "review": "I loved them."
+      }
+    ]
+  },
+  {
+    "id": "el-mes-n-de-melquiades",
+    "name": "El Mesón de Melquiades",
+    "location": "Cayey",
+    "reviews": []
+  },
+  {
+    "id": "quinta-mojica",
+    "name": "Quinta Mojica",
+    "location": "Aguas Buenas",
+    "reviews": []
+  },
+  {
+    "id": "burger-king",
+    "name": "Burger King",
+    "location": "San Germán",
+    "reviews": []
+  },
+  {
+    "id": "restaurante-chino-el-drag-n",
+    "name": "Restaurante Chino El Dragón",
+    "location": "Guayanilla",
+    "reviews": []
+  },
+  {
+    "id": "la-casita-del-chef-javier",
+    "name": "La Casita del Chef Javier",
+    "location": "Jayuya",
+    "reviews": []
+  },
+  {
+    "id": "mi-familia-mini-market-bar-grill",
+    "name": "Mi Familia Mini Market Bar & Grill",
+    "location": "Aibonito",
+    "reviews": []
+  },
+  {
+    "id": "the-taco-maker",
+    "name": "The Taco Maker",
+    "location": "Peñuelas",
+    "reviews": []
+  },
+  {
+    "id": "burger-king",
+    "name": "Burger King",
+    "location": "Utuado",
+    "reviews": []
+  },
+  {
+    "id": "la-catumba",
+    "name": "La Catumba",
+    "location": "Cabo Rojo",
+    "reviews": []
+  },
+  {
+    "id": "rico-s",
+    "name": "Rico’s",
+    "location": "Guayama",
+    "reviews": []
+  },
+  {
+    "id": "country-house",
+    "name": "Country House",
+    "location": "San Sebastián",
+    "reviews": []
+  },
+  {
+    "id": "helader-a-lares",
+    "name": "Heladería Lares",
+    "location": "Lares",
+    "reviews": []
+  },
+  {
+    "id": "mofongo-jibaro",
+    "name": "Mofongo Jibaro",
+    "location": "Jayuya",
+    "reviews": []
+  },
+  {
+    "id": "maelo-chicken-fever",
+    "name": "Maelo Chicken Fever",
+    "location": "Morovis",
+    "reviews": []
+  },
+  {
+    "id": "el-oasis-refrescante",
+    "name": "El Oasis Refrescante",
+    "location": "Ciales",
+    "reviews": []
+  },
+  {
+    "id": "burger-king",
+    "name": "Burger King",
+    "location": "Ciales",
+    "reviews": []
+  },
+  {
+    "id": "la-sombra-del-laurel",
+    "name": "La Sombra del Laurel",
+    "location": "Corozal",
+    "reviews": []
+  },
+  {
+    "id": "casa-bavaria",
+    "name": "Casa Bavaria",
+    "location": "Morovis",
+    "reviews": []
+  },
+  {
+    "id": "church-s-chicken",
+    "name": "Church’s Chicken",
+    "location": "Orocovis",
+    "reviews": []
+  },
+  {
+    "id": "marco-s-pizza",
+    "name": "Marco’s Pizza",
+    "location": "Vega Alta",
+    "reviews": []
+  },
+  {
+    "id": "subway",
+    "name": "Subway",
+    "location": "Corozal",
+    "reviews": []
+  },
+  {
+    "id": "momentos-caf-coffee-shop-bistro",
+    "name": "Momentos Café Coffee Shop & Bistro",
+    "location": "Vega Alta",
+    "reviews": []
+  },
+  {
+    "id": "kfc",
+    "name": "KFC",
+    "location": "Vega Alta",
+    "reviews": []
+  },
+  {
+    "id": "burger-king",
+    "name": "Burger King",
+    "location": "Vega Alta",
+    "reviews": []
+  },
+  {
+    "id": "the-taco-maker",
+    "name": "The Taco Maker",
+    "location": "Toa Baja",
+    "reviews": []
+  },
+  {
+    "id": "pizza-hut",
+    "name": "Pizza Hut",
+    "location": "Juana Díaz",
+    "reviews": []
+  },
+  {
+    "id": "panader-a-la-comerie-a",
+    "name": "Panadería La Comerieña",
+    "location": "Comerío",
+    "reviews": []
+  },
+  {
+    "id": "wendy-s",
+    "name": "Wendy’s",
+    "location": "Ponce",
+    "reviews": []
+  },
+  {
+    "id": "little-caesars",
+    "name": "Little Caesars",
+    "location": "Bayamón",
+    "reviews": []
+  },
+  {
+    "id": "firehouse-subs",
+    "name": "Firehouse Subs",
+    "location": "Bayamón",
+    "reviews": []
   }
 ]

@@ -4,6 +4,8 @@ const UserModel = require("../models/UserModel");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const BlacklistedToken = require("../models/BlackListedTokens");
+const restaurants = require("../../src/node/restaurant.json");
+const fs = require("fs");
 
 router.post("/signup", async (req, res) => {
   try {
@@ -185,6 +187,80 @@ router.post("/logout", async (req, res) => {
     console.error("Error while logging out user:", err);
     res.status(500).json({ message: err.message });
   }
+});
+router.post("/add-restaurant", (req, res) => {
+  const { name, location } = req.body;
+  console.log("Received a request to add a restaurant:", req.body);
+  // Generate ID based on the restaurant name
+  const id = name.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+
+  // Load the contents of the restaurants.json file into the restaurants array
+  const fileContents = fs.readFileSync("../src/node/restaurant.json", "utf8");
+  const restaurants = JSON.parse(fileContents);
+
+  // Check if the restaurant already exists
+  if (restaurants.some((r) => r.id === id && r.location === location)) {
+    return res.status(409).json({ error: "Restaurant already exists" });
+  }
+
+  // Add the new restaurant to the existing restaurants array
+  restaurants.push({ id, name, location, reviews: [] });
+
+  // Update the restaurants.json file with the updated restaurants array
+  fs.writeFile(
+    "../src/node/restaurant.json",
+    JSON.stringify(restaurants, null, 2),
+    (err) => {
+      if (err) throw err;
+      return res.json({ success: true });
+    }
+  );
+});
+router.post("/get-restaurant", (req, res) => {
+  const { id } = req.body;
+  console.log("Received a request to get a restaurant:", req.body);
+
+  // Load the contents of the restaurants.json file into the restaurants array
+  const fileContents = fs.readFileSync("../src/node/restaurant.json", "utf8");
+  const restaurants = JSON.parse(fileContents);
+
+  // Find the restaurant with the specified ID
+  const restaurant = restaurants.find((r) => r.id === id);
+
+  // If the restaurant is not found, return a 404 error
+  if (!restaurant) {
+    return res.status(404).json({ error: "Restaurant not found" });
+  }
+
+  // Return the restaurant name and location
+  return res.json({ name: restaurant.name, location: restaurant.location });
+});
+
+router.post("/add-review", (req, res) => {
+  const { id, location, rating, review } = req.body;
+
+  // Find the restaurant with the matching id and location
+  const restaurant = restaurants.find(
+    (r) => r.id === id && r.location === location
+  );
+
+  // If the restaurant isn't found, return an error
+  if (!restaurant) {
+    return res.status(404).json({ error: "Restaurant not found" });
+  }
+
+  // Add the new review to the restaurant's reviews array
+  restaurant.reviews.push({ rating, review });
+
+  // Update the restaurants.json file with the new review
+  fs.writeFile(
+    "../src/node/restaurant.json",
+    JSON.stringify(restaurants, null, 2),
+    (err) => {
+      if (err) throw err;
+      return res.json({ success: true });
+    }
+  );
 });
 
 module.exports = router;

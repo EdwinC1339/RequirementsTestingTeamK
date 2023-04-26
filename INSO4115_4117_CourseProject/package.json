@@ -19,6 +19,7 @@
     "bootstrap": "^5.2.3",
     "fast-text-encoding": "^1.0.6",
     "framer": "^2.3.0",
+    "fs": "0.0.1-security",
     "googleapis": "^113.0.0",
     "googleplaces": "^0.6.1",
     "http2": "^3.3.7",

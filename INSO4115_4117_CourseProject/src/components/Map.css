@@ -45,3 +45,28 @@
   top: 20px;
   right: 20px;
 }
+
+.container {
+  padding: 120px;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.rating {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.map-area {
+  padding: 30px;
+}
