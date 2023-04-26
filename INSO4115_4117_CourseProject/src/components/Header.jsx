@@ -88,12 +88,9 @@ function Header() {
               CONTACT US
             </Nav.Link>
             <div className="vr"></div>
-            <NavDropdown title="+MORE" id="navbarScrollingDropdown">
-              <Nav.Link as={Link} to="/contact">
-                Contact
-              </Nav.Link>
-              <NavDropdown.Divider />
-            </NavDropdown>
+            <Nav.Link as={Link} to="/restaurants">
+              Restaurants
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>

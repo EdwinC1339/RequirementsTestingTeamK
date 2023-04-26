@@ -300,7 +300,29 @@
     "id": "the-taco-maker",
     "name": "The Taco Maker",
     "location": "Peñuelas",
-    "reviews": []
+    "reviews": [],
+    "restrictions": {
+      "Halal": {
+        "yes": 0,
+        "no": 0
+      },
+      "Lactose Intolerant": {
+        "yes": 0,
+        "no": 0
+      },
+      "Nut Allergy": {
+        "yes": 0,
+        "no": 0
+      },
+      "Vegan": {
+        "yes": 0,
+        "no": 0
+      },
+      "Vegetarian": {
+        "yes": 0,
+        "no": 0
+      }
+    }
   },
   {
     "id": "burger-king",
@@ -436,7 +458,29 @@
     "id": "el-oasis-refrescante",
     "name": "El Oasis Refrescante",
     "location": "Ciales",
-    "reviews": []
+    "reviews": [],
+    "restrictions": {
+      "Halal": {
+        "yes": 0,
+        "no": 0
+      },
+      "Lactose Intolerant": {
+        "yes": 0,
+        "no": 0
+      },
+      "Nut Allergy": {
+        "yes": 0,
+        "no": 0
+      },
+      "Vegan": {
+        "yes": 0,
+        "no": 0
+      },
+      "Vegetarian": {
+        "yes": 0,
+        "no": 0
+      }
+    }
   },
   {
     "id": "burger-king",
@@ -593,7 +637,29 @@
     "id": "subway",
     "name": "Subway",
     "location": "Moca",
-    "reviews": []
+    "reviews": [],
+    "restrictions": {
+      "Halal": {
+        "yes": 0,
+        "no": 0
+      },
+      "Lactose Intolerant": {
+        "yes": 0,
+        "no": 0
+      },
+      "Nut Allergy": {
+        "yes": 0,
+        "no": 0
+      },
+      "Vegan": {
+        "yes": 0,
+        "no": 0
+      },
+      "Vegetarian": {
+        "yes": 0,
+        "no": 0
+      }
+    }
   },
   {
     "id": "wing-wah-china",
@@ -1234,6 +1300,62 @@
     "id": "church-s-chicken",
     "name": "Church’s Chicken",
     "location": "Aguadilla",
+    "reviews": [],
+    "restrictions": {
+      "Halal": {
+        "yes": 0,
+        "no": 0
+      },
+      "Lactose Intolerant": {
+        "yes": 0,
+        "no": 0
+      },
+      "Nut Allergy": {
+        "yes": 0,
+        "no": 0
+      },
+      "Vegan": {
+        "yes": 0,
+        "no": 0
+      },
+      "Vegetarian": {
+        "yes": 0,
+        "no": 0
+      }
+    }
+  },
+  {
+    "id": "red-lobster",
+    "name": "Red Lobster",
+    "location": "Bayamón",
+    "reviews": [],
+    "restrictions": {
+      "Halal": {
+        "yes": 0,
+        "no": 0
+      },
+      "Lactose Intolerant": {
+        "yes": 0,
+        "no": 0
+      },
+      "Nut Allergy": {
+        "yes": 0,
+        "no": 0
+      },
+      "Vegan": {
+        "yes": 0,
+        "no": 0
+      },
+      "Vegetarian": {
+        "yes": 0,
+        "no": 0
+      }
+    }
+  },
+  {
+    "id": "lechonera-los-pinos",
+    "name": "Lechonera Los Pinos",
+    "location": "Cayey",
     "reviews": [],
     "restrictions": {
       "Halal": {

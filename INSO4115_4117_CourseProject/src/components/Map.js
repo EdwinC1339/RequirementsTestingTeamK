@@ -231,7 +231,7 @@ const Map = () => {
       <div className="row">
         {showRating && (
           <div className="col-lg-3">
-            <div className="container-fluid">
+            <div className="container">
               <div className="rating">
                 <RatingComponent
                   restaurantName={currentPlace.name}

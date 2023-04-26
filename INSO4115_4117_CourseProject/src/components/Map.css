@@ -47,7 +47,7 @@
 }
 
 .container {
-  padding: 120px;
+  padding: 10px;
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -70,4 +70,9 @@
 
 .map-area {
   padding: 30px;
+}
+@media only screen and (max-width: 768px) {
+  .map-container {
+    width: 100%;
+  }
 }
