@@ -4,7 +4,8 @@ import "./RestaurantList.css";
 import { useNavigate, Link } from "react-router-dom";
 import { faHouse } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 function RestaurantList() {
   const [counter, setCounter] = useState(1);
   const totalRestaurants = restaurantsData.length;
@@ -88,10 +89,8 @@ function RestaurantList() {
 
   return (
     <>
+      <Header />
       <div className="header">Restaurants </div>{" "}
-      <Link as={Link} to="/">
-        <FontAwesomeIcon icon={faHouse} />
-      </Link>
       <div className="container-fluid">
         {restaurantsData.map((restaurant, index) => (
           <div
@@ -104,6 +103,7 @@ function RestaurantList() {
           </div>
         ))}
       </div>
+      <Footer />
     </>
   );
 }
