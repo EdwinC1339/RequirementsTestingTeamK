@@ -191,6 +191,7 @@ router.post("/logout", async (req, res) => {
 router.post("/add-restaurant", (req, res) => {
   const { name, location } = req.body;
   console.log("Received a request to add a restaurant:", req.body);
+
   // Generate ID based on the restaurant name
   const id = name.toLowerCase().replace(/[^a-z0-9]+/g, "-");
 
@@ -199,12 +200,43 @@ router.post("/add-restaurant", (req, res) => {
   const restaurants = JSON.parse(fileContents);
 
   // Check if the restaurant already exists
-  if (restaurants.some((r) => r.id === id && r.location === location)) {
-    return res.status(409).json({ error: "Restaurant already exists" });
-  }
+  const existingRestaurantIndex = restaurants.findIndex(
+    (r) => r.id === id && r.location === location
+  );
 
-  // Add the new restaurant to the existing restaurants array
-  restaurants.push({ id, name, location, reviews: [] });
+  if (existingRestaurantIndex !== -1) {
+    // Restaurant already exists, update the restrictions array if it doesn't exist
+    const existingRestaurant = restaurants[existingRestaurantIndex];
+
+    if (!existingRestaurant.restrictions) {
+      existingRestaurant.restrictions = {
+        Halal: { yes: 0, no: 0 },
+        "Lactose Intolerant": { yes: 0, no: 0 },
+        "Nut Allergy": { yes: 0, no: 0 },
+        Vegan: { yes: 0, no: 0 },
+        Vegetarian: { yes: 0, no: 0 },
+      };
+      restaurants[existingRestaurantIndex] = existingRestaurant;
+    } else {
+      // Restaurant already has the restrictions array, do not overwrite it
+      return res.status(409).json({ error: "Restaurant already exists" });
+    }
+  } else {
+    // Add the new restaurant to the existing restaurants array
+    restaurants.push({
+      id,
+      name,
+      location,
+      reviews: [],
+      restrictions: {
+        Halal: { yes: 0, no: 0 },
+        "Lactose Intolerant": { yes: 0, no: 0 },
+        "Nut Allergy": { yes: 0, no: 0 },
+        Vegan: { yes: 0, no: 0 },
+        Vegetarian: { yes: 0, no: 0 },
+      },
+    });
+  }
 
   // Update the restaurants.json file with the updated restaurants array
   fs.writeFile(
@@ -216,6 +248,7 @@ router.post("/add-restaurant", (req, res) => {
     }
   );
 });
+
 router.post("/get-restaurant", (req, res) => {
   const { id } = req.body;
   console.log("Received a request to get a restaurant:", req.body);
@@ -235,32 +268,97 @@ router.post("/get-restaurant", (req, res) => {
   // Return the restaurant name and location
   return res.json({ name: restaurant.name, location: restaurant.location });
 });
-
 router.post("/add-review", (req, res) => {
-  const { id, location, rating, review } = req.body;
+  const { id, location, rating, review, restrictions } = req.body;
 
-  // Find the restaurant with the matching id and location
+  fs.readFile("../src/node/restaurant.json", (err, data) => {
+    if (err) {
+      console.error(err);
+      return res.status(500).json({ error: "Failed to read file" });
+    }
+
+    try {
+      const restaurants = JSON.parse(data);
+
+      // Find the restaurant with the matching id and location
+      const restaurant = restaurants.find(
+        (r) => r.id === id && r.location === location
+      );
+
+      // If the restaurant isn't found, return an error
+      if (!restaurant) {
+        return res.status(404).json({ error: "Restaurant not found" });
+      }
+
+      // Add the new review to the restaurant's reviews array
+      restaurant.reviews.push({ rating, review });
+
+      // Update the restrictions object for the restaurant
+      for (const [option, value] of Object.entries(restrictions)) {
+        if (value === false || value === true) {
+          const optionData = restaurant.restrictions[option];
+
+          if (optionData) {
+            optionData[value ? "yes" : "no"] += 1;
+          }
+          console.log(optionData);
+        }
+      }
+
+      // Update the restaurants.json file with the new review and restrictions data
+      fs.writeFile(
+        "../src/node/restaurant.json",
+        JSON.stringify(restaurants, null, 2),
+        (err) => {
+          if (err) throw err;
+          return res.json({ success: true });
+        }
+      );
+    } catch (err) {
+      console.error(err);
+      return res.status(500).json({ error: "Failed to parse JSON" });
+    }
+  });
+});
+
+router.post("/get-restaurant-rating", (req, res) => {
+  const { id, location } = req.body;
+  console.log("Received a request to get a restaurant's rating:", req.body);
+
+  // Load the contents of the restaurants.json file into the restaurants array
+  const fileContents = fs.readFileSync("../src/node/restaurant.json", "utf8");
+  const restaurants = JSON.parse(fileContents);
+
+  // Find the restaurant with the specified ID
   const restaurant = restaurants.find(
     (r) => r.id === id && r.location === location
   );
 
-  // If the restaurant isn't found, return an error
+  // If the restaurant is not found, return a 404 error
   if (!restaurant) {
     return res.status(404).json({ error: "Restaurant not found" });
   }
 
-  // Add the new review to the restaurant's reviews array
-  restaurant.reviews.push({ rating, review });
+  // Get the reviews of the restaurant
+  const reviews = restaurant.reviews;
 
-  // Update the restaurants.json file with the new review
-  fs.writeFile(
-    "../src/node/restaurant.json",
-    JSON.stringify(restaurants, null, 2),
-    (err) => {
-      if (err) throw err;
-      return res.json({ success: true });
-    }
-  );
+  // If the restaurant has no reviews, return an error
+  if (!reviews || reviews.length === 0) {
+    return res
+      .status(404)
+      .json({ error: "No reviews found for the restaurant" });
+  }
+
+  // Extract the ratings from the reviews
+  const ratings = reviews.map((review) => review.rating);
+  console.log("Ratings:", ratings);
+  // Calculate the average rating of the restaurant
+  const sum = ratings.reduce((acc, rating) => acc + rating, 0);
+  const averageRating = (sum / ratings.length).toFixed(1);
+  console.log("Average rating:", averageRating);
+
+  // Return the restaurant's average rating
+  return res.json({ averageRating });
 });
 
 module.exports = router;

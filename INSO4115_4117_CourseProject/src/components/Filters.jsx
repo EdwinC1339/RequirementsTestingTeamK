@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
+import { useState, memo } from "react";
 import Filter from "./Filter";
-import { Dropdown, DropdownButton } from "react-bootstrap";
+import Dropdown from "react-bootstrap/Dropdown";
+import DropdownButton from "react-bootstrap/DropdownButton";
+
 function Filters() {
-  // Dummy restriction names
   const restriction_names = [
     "Halal",
     "Lactose Intolerant",
@@ -10,28 +12,55 @@ function Filters() {
     "Vegan",
     "Vegetarian",
   ];
+
+  const [selectedFilters, setSelectedFilters] = useState([]);
+
+  const handleFilterSelection = (filterName) => {
+    if (selectedFilters.includes(filterName)) {
+      setSelectedFilters(selectedFilters.filter((name) => name !== filterName));
+    } else {
+      setSelectedFilters([...selectedFilters, filterName]);
+    }
+  };
+
+  const handleCheckboxClick = (event) => {
+    event.stopPropagation();
+  };
+
   const filters = restriction_names.map((name) => {
-    return <Filter name={name} />;
+    return (
+      <Dropdown.Item key={name}>
+        <label>
+          <input
+            type="checkbox"
+            value={name}
+            checked={selectedFilters.includes(name)}
+            onChange={() => handleFilterSelection(name)}
+            onClick={handleCheckboxClick}
+          />
+          {name}
+        </label>
+      </Dropdown.Item>
+    );
   });
 
   return (
-    <div className="filters-div ">
+    <div className="filters-div">
       <h1>SELECT YOUR RESTRICTIONS</h1>
       <p>
         Select from an extensive list of dietary restrictions to be able to
         choose the food service that suits your needs
       </p>
-      <Dropdown>
-        <Dropdown.Toggle variant="success" id="dropdown-basic">
-          Restriction Selection
-        </Dropdown.Toggle>
-
-        <Dropdown.Menu>
-          <div className="filters">{filters}</div>
-        </Dropdown.Menu>
-      </Dropdown>
+      <DropdownButton
+        variant="success"
+        title="Restriction Selection"
+        onToggle={() => {}}
+        padding="10px"
+      >
+        {filters}
+      </DropdownButton>
     </div>
   );
 }
 
-export default React.memo(Filters);
+export default memo(Filters);

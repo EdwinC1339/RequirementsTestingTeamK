@@ -1,43 +1,19 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-class Register extends Component {
-  constructor() {
-    super();
-    this.state = {
-      fullName: "",
-      email: "",
-      password: "",
-    };
-    this.changeFullName = this.changeFullName.bind(this);
-    this.changeEmail = this.changeEmail.bind(this);
-    this.changePassword = this.changePassword.bind(this);
-    this.onSubmit = this.onSubmit.bind(this);
-  }
+function Register(props) {
+  const [fullName, setFullName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const navigate = useNavigate();
 
-  changeFullName(event) {
-    this.setState({
-      fullName: event.target.value,
-    });
-  }
-
-  changeEmail(event) {
-    this.setState({
-      email: event.target.value,
-    });
-  }
-
-  changePassword(event) {
-    this.setState({
-      password: event.target.value,
-    });
-  }
-
-  onSubmit(event) {
+  function onSubmit(event) {
     event.preventDefault();
     const registered = {
-      fullName: this.state.fullName,
-      email: this.state.email,
-      password: this.state.password,
+      fullName,
+      email,
+      password,
     };
     console.log("Registered:", registered);
     fetch("http://localhost:4000/api/signup", {
@@ -56,54 +32,53 @@ class Register extends Component {
       })
       .then((data) => {
         console.log("Data:", data);
-        this.props.setIsAuthenticated(true);
-        window.location = "/";
+        setIsAuthenticated(true);
+        localStorage.setItem("token", data.token);
+        navigate("/profile");
       })
       .catch((error) => {
         console.error(error);
       });
   }
 
-  render() {
-    return (
-      <div>
-        <div className="container">
-          <div className="form-div">
-            <form onSubmit={this.onSubmit}>
-              <input
-                type="text"
-                placeholder="Full Name"
-                onChange={this.changeFullName}
-                value={this.state.fullName}
-                className="form-control form-group"
-              />
+  return (
+    <div>
+      <div className="container">
+        <div className="form-div">
+          <form onSubmit={onSubmit}>
+            <input
+              type="text"
+              placeholder="Full Name"
+              onChange={(e) => setFullName(e.target.value)}
+              value={fullName}
+              className="form-control form-group"
+            />
 
-              <input
-                type="email"
-                placeholder="Email"
-                onChange={this.changeEmail}
-                value={this.state.email}
-                className="form-control form-group"
-              />
+            <input
+              type="email"
+              placeholder="Email"
+              onChange={(e) => setEmail(e.target.value)}
+              value={email}
+              className="form-control form-group"
+            />
 
-              <input
-                type="password"
-                placeholder="Password"
-                onChange={this.changePassword}
-                value={this.state.password}
-                className="form-control form-group"
-              />
-              <input
-                type="submit"
-                className="btn btn-danger btn-block"
-                value="Register"
-              />
-            </form>
-          </div>
+            <input
+              type="password"
+              placeholder="Password"
+              onChange={(e) => setPassword(e.target.value)}
+              value={password}
+              className="form-control form-group"
+            />
+            <input
+              type="submit"
+              className="btn btn-danger btn-block"
+              value="Register"
+            />
+          </form>
         </div>
       </div>
-    );
-  }
+    </div>
+  );
 }
 
 export default Register;

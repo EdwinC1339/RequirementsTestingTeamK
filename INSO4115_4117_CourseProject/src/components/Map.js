@@ -8,7 +8,13 @@ import municipalitiesJSON from "./municipalities.json";
 import RatingComponent from "./Rating.jsx";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
-
+const restriction_names = [
+  "Halal",
+  "Lactose Intolerant",
+  "Nut Allergy",
+  "Vegan",
+  "Vegetarian",
+];
 const key =
   "pk.eyJ1IjoiYWxvbnNvMTQiLCJhIjoiY2xmcm1scDM0MDVpMjN6bDhnenhleDI0dyJ9.WCGBtiA1Ij0EkiA6IpOgrA";
 mapboxgl.accessToken = key;
@@ -224,8 +230,8 @@ const Map = () => {
     <div className="map-area">
       <div className="row">
         {showRating && (
-          <div className="col-4">
-            <div className="container">
+          <div className="col-lg-3">
+            <div className="container-fluid">
               <div className="rating">
                 <RatingComponent
                   restaurantName={currentPlace.name}
@@ -241,7 +247,7 @@ const Map = () => {
             </div>
           </div>
         )}
-        <div className={showRating ? "col-8" : "col-12"}>
+        <div className={showRating ? "col-lg-9" : "col-lg-12"}>
           <div className="sidebarStyle">
             <div>
               Longitude: {lng} | Latitude: {lat} | Zoom: {zoom}

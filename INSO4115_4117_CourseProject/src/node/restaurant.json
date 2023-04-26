@@ -33,7 +33,44 @@
     "id": "cafe-nativo",
     "name": "Cafe Nativo",
     "location": "Jayuya",
-    "reviews": []
+    "reviews": [
+      {
+        "rating": null,
+        "review": ""
+      },
+      {
+        "rating": 5,
+        "review": "It was bussing"
+      },
+      {
+        "rating": 4,
+        "review": "BUSING"
+      }
+    ],
+    "restrictions": {
+      "Halal": {
+        "yes": 1,
+        "no": 0,
+        "No": null
+      },
+      "Lactose Intolerant": {
+        "yes": 0,
+        "no": 1,
+        "No": null
+      },
+      "Nut Allergy": {
+        "yes": 0,
+        "no": 0
+      },
+      "Vegan": {
+        "yes": 0,
+        "no": 0
+      },
+      "Vegetarian": {
+        "yes": 0,
+        "no": 0
+      }
+    }
   },
   {
     "id": "santin-s-pizza",
@@ -53,8 +90,96 @@
       {
         "rating": 5,
         "review": "I loved them."
+      },
+      {
+        "rating": 4,
+        "review": "That food was bussing"
+      },
+      {
+        "rating": 4,
+        "review": "That was some bussing food"
+      },
+      {
+        "rating": 5,
+        "review": "Nice"
+      },
+      {
+        "rating": 4,
+        "review": "Que rico "
+      },
+      {
+        "rating": 5,
+        "review": "papai"
+      },
+      {
+        "rating": 2,
+        "review": "NOT BUSSING"
+      },
+      {
+        "rating": 4,
+        "review": "NOT BUSSING"
+      },
+      {
+        "rating": 4,
+        "review": "NOT U"
+      },
+      {
+        "rating": 4,
+        "review": "buss"
+      },
+      {
+        "rating": 4,
+        "review": "buss"
+      },
+      {
+        "rating": null,
+        "review": "f"
+      },
+      {
+        "rating": null,
+        "review": "f"
+      },
+      {
+        "rating": 4,
+        "review": "g"
+      },
+      {
+        "rating": 4,
+        "review": "y"
+      },
+      {
+        "rating": 4,
+        "review": "nice"
+      },
+      {
+        "rating": 4,
+        "review": "Meh"
       }
-    ]
+    ],
+    "restrictions": {
+      "Halal": {
+        "yes": 8,
+        "no": 0,
+        "Yes": null
+      },
+      "Lactose Intolerant": {
+        "yes": 3,
+        "no": 5,
+        "Yes": null
+      },
+      "Nut Allergy": {
+        "yes": 3,
+        "no": 0
+      },
+      "Vegan": {
+        "yes": 0,
+        "no": 0
+      },
+      "Vegetarian": {
+        "yes": 0,
+        "no": 1
+      }
+    }
   },
   {
     "id": "el-mes-n-de-melquiades",
@@ -72,19 +197,98 @@
     "id": "burger-king",
     "name": "Burger King",
     "location": "San Germán",
-    "reviews": []
+    "reviews": [],
+    "restrictions": {
+      "Halal": {
+        "yes": 0,
+        "no": 0
+      },
+      "Lactose Intolerant": {
+        "yes": 0,
+        "no": 0
+      },
+      "Nut Allergy": {
+        "yes": 0,
+        "no": 0
+      },
+      "Vegan": {
+        "yes": 0,
+        "no": 0
+      },
+      "Vegetarian": {
+        "yes": 0,
+        "no": 0
+      }
+    }
   },
   {
     "id": "restaurante-chino-el-drag-n",
     "name": "Restaurante Chino El Dragón",
     "location": "Guayanilla",
-    "reviews": []
+    "reviews": [
+      {
+        "rating": 5,
+        "review": "check"
+      },
+      {
+        "rating": 4,
+        "review": "check"
+      },
+      {
+        "rating": 4,
+        "review": "check"
+      }
+    ],
+    "restrictions": {
+      "Halal": {
+        "yes": 2,
+        "no": 1
+      },
+      "Lactose Intolerant": {
+        "yes": 2,
+        "no": 1
+      },
+      "Nut Allergy": {
+        "yes": 3,
+        "no": 0
+      },
+      "Vegan": {
+        "yes": 3,
+        "no": 0
+      },
+      "Vegetarian": {
+        "yes": 3,
+        "no": 0
+      }
+    }
   },
   {
     "id": "la-casita-del-chef-javier",
     "name": "La Casita del Chef Javier",
     "location": "Jayuya",
-    "reviews": []
+    "reviews": [],
+    "restrictions": {
+      "Halal": {
+        "yes": 0,
+        "no": 0
+      },
+      "Lactose Intolerant": {
+        "yes": 0,
+        "no": 0
+      },
+      "Nut Allergy": {
+        "yes": 0,
+        "no": 0
+      },
+      "Vegan": {
+        "yes": 0,
+        "no": 0
+      },
+      "Vegetarian": {
+        "yes": 0,
+        "no": 0
+      }
+    }
   },
   {
     "id": "mi-familia-mini-market-bar-grill",
@@ -102,13 +306,66 @@
     "id": "burger-king",
     "name": "Burger King",
     "location": "Utuado",
-    "reviews": []
+    "reviews": [
+      {
+        "rating": 5,
+        "review": "nice"
+      },
+      {
+        "rating": 5,
+        "review": "muy meh"
+      }
+    ],
+    "restrictions": {
+      "Halal": {
+        "yes": 2,
+        "no": 0
+      },
+      "Lactose Intolerant": {
+        "yes": 2,
+        "no": 0
+      },
+      "Nut Allergy": {
+        "yes": 2,
+        "no": 0
+      },
+      "Vegan": {
+        "yes": 1,
+        "no": 0
+      },
+      "Vegetarian": {
+        "yes": 1,
+        "no": 0
+      }
+    }
   },
   {
     "id": "la-catumba",
     "name": "La Catumba",
     "location": "Cabo Rojo",
-    "reviews": []
+    "reviews": [],
+    "restrictions": {
+      "Halal": {
+        "yes": 0,
+        "no": 0
+      },
+      "Lactose Intolerant": {
+        "yes": 0,
+        "no": 0
+      },
+      "Nut Allergy": {
+        "yes": 0,
+        "no": 0
+      },
+      "Vegan": {
+        "yes": 0,
+        "no": 0
+      },
+      "Vegetarian": {
+        "yes": 0,
+        "no": 0
+      }
+    }
   },
   {
     "id": "rico-s",
@@ -120,7 +377,42 @@
     "id": "country-house",
     "name": "Country House",
     "location": "San Sebastián",
-    "reviews": []
+    "reviews": [
+      {
+        "rating": 5,
+        "review": "nice"
+      },
+      {
+        "rating": 5,
+        "review": "nice"
+      },
+      {
+        "rating": 4,
+        "review": "nice"
+      }
+    ],
+    "restrictions": {
+      "Halal": {
+        "yes": 0,
+        "no": 0
+      },
+      "Lactose Intolerant": {
+        "yes": 0,
+        "no": 0
+      },
+      "Nut Allergy": {
+        "yes": 0,
+        "no": 0
+      },
+      "Vegan": {
+        "yes": 0,
+        "no": 0
+      },
+      "Vegetarian": {
+        "yes": 0,
+        "no": 0
+      }
+    }
   },
   {
     "id": "helader-a-lares",
@@ -168,7 +460,29 @@
     "id": "church-s-chicken",
     "name": "Church’s Chicken",
     "location": "Orocovis",
-    "reviews": []
+    "reviews": [],
+    "restrictions": {
+      "Halal": {
+        "yes": 0,
+        "no": 0
+      },
+      "Lactose Intolerant": {
+        "yes": 0,
+        "no": 0
+      },
+      "Nut Allergy": {
+        "yes": 0,
+        "no": 0
+      },
+      "Vegan": {
+        "yes": 0,
+        "no": 0
+      },
+      "Vegetarian": {
+        "yes": 0,
+        "no": 0
+      }
+    }
   },
   {
     "id": "marco-s-pizza",
@@ -210,7 +524,34 @@
     "id": "pizza-hut",
     "name": "Pizza Hut",
     "location": "Juana Díaz",
-    "reviews": []
+    "reviews": [
+      {
+        "rating": 4,
+        "review": "Bussing"
+      }
+    ],
+    "restrictions": {
+      "Halal": {
+        "yes": 1,
+        "no": 0
+      },
+      "Lactose Intolerant": {
+        "yes": 1,
+        "no": 0
+      },
+      "Nut Allergy": {
+        "yes": 0,
+        "no": 0
+      },
+      "Vegan": {
+        "yes": 0,
+        "no": 0
+      },
+      "Vegetarian": {
+        "yes": 0,
+        "no": 0
+      }
+    }
   },
   {
     "id": "panader-a-la-comerie-a",
@@ -235,5 +576,686 @@
     "name": "Firehouse Subs",
     "location": "Bayamón",
     "reviews": []
+  },
+  {
+    "id": "helader-a-el-grito",
+    "name": "Heladería El Grito",
+    "location": "Lares",
+    "reviews": []
+  },
+  {
+    "id": "cafeter-a-colombo",
+    "name": "Cafetería Colombo",
+    "location": "Lares",
+    "reviews": []
+  },
+  {
+    "id": "subway",
+    "name": "Subway",
+    "location": "Moca",
+    "reviews": []
+  },
+  {
+    "id": "wing-wah-china",
+    "name": "Wing Wah China",
+    "location": "Añasco",
+    "reviews": [
+      {
+        "rating": 5,
+        "review": "Esta bussing"
+      }
+    ],
+    "restrictions": {
+      "Halal": {
+        "yes": 1,
+        "no": 0
+      },
+      "Lactose Intolerant": {
+        "yes": 0,
+        "no": 1
+      },
+      "Nut Allergy": {
+        "yes": 0,
+        "no": 0
+      },
+      "Vegan": {
+        "yes": 0,
+        "no": 0
+      },
+      "Vegetarian": {
+        "yes": 0,
+        "no": 0
+      }
+    }
+  },
+  {
+    "id": "mcdonald-s",
+    "name": "McDonald’s",
+    "location": "Cabo Rojo",
+    "reviews": [],
+    "restrictions": {
+      "Halal": {
+        "yes": 0,
+        "no": 0
+      },
+      "Lactose Intolerant": {
+        "yes": 0,
+        "no": 0
+      },
+      "Nut Allergy": {
+        "yes": 0,
+        "no": 0
+      },
+      "Vegan": {
+        "yes": 0,
+        "no": 0
+      },
+      "Vegetarian": {
+        "yes": 0,
+        "no": 0
+      }
+    }
+  },
+  {
+    "id": "bodeguita-del-puerto",
+    "name": "Bodeguita del Puerto",
+    "location": "Cabo Rojo",
+    "reviews": [
+      {
+        "rating": 5,
+        "review": "Nice"
+      }
+    ],
+    "restrictions": {
+      "Halal": {
+        "yes": 1,
+        "no": 0
+      },
+      "Lactose Intolerant": {
+        "yes": 1,
+        "no": 0
+      },
+      "Nut Allergy": {
+        "yes": 0,
+        "no": 0
+      },
+      "Vegan": {
+        "yes": 0,
+        "no": 0
+      },
+      "Vegetarian": {
+        "yes": 0,
+        "no": 0
+      }
+    }
+  },
+  {
+    "id": "church-s-chicken",
+    "name": "Church’s Chicken",
+    "location": "Mayagüez",
+    "reviews": [
+      {
+        "rating": 5,
+        "review": "meh"
+      },
+      {
+        "rating": 4,
+        "review": "meh"
+      },
+      {
+        "rating": 4,
+        "review": "No bussing"
+      }
+    ],
+    "restrictions": {
+      "Halal": {
+        "yes": 1,
+        "no": 2
+      },
+      "Lactose Intolerant": {
+        "yes": 0,
+        "no": 3
+      },
+      "Nut Allergy": {
+        "yes": 0,
+        "no": 0
+      },
+      "Vegan": {
+        "yes": 0,
+        "no": 0
+      },
+      "Vegetarian": {
+        "yes": 0,
+        "no": 0
+      }
+    }
+  },
+  {
+    "id": "sizzler",
+    "name": "Sizzler",
+    "location": "Mayagüez",
+    "reviews": [],
+    "restrictions": {
+      "Halal": {
+        "yes": 0,
+        "no": 0
+      },
+      "Lactose Intolerant": {
+        "yes": 0,
+        "no": 0
+      },
+      "Nut Allergy": {
+        "yes": 0,
+        "no": 0
+      },
+      "Vegan": {
+        "yes": 0,
+        "no": 0
+      },
+      "Vegetarian": {
+        "yes": 0,
+        "no": 0
+      }
+    }
+  },
+  {
+    "id": "mcdonald-s",
+    "name": "McDonald’s",
+    "location": "Hormigueros",
+    "reviews": [],
+    "restrictions": {
+      "Halal": {
+        "yes": 0,
+        "no": 0
+      },
+      "Lactose Intolerant": {
+        "yes": 0,
+        "no": 0
+      },
+      "Nut Allergy": {
+        "yes": 0,
+        "no": 0
+      },
+      "Vegan": {
+        "yes": 0,
+        "no": 0
+      },
+      "Vegetarian": {
+        "yes": 0,
+        "no": 0
+      }
+    }
+  },
+  {
+    "id": "el-gatito",
+    "name": "El Gatito",
+    "location": "Cabo Rojo",
+    "reviews": [],
+    "restrictions": {
+      "Halal": {
+        "yes": 0,
+        "no": 0
+      },
+      "Lactose Intolerant": {
+        "yes": 0,
+        "no": 0
+      },
+      "Nut Allergy": {
+        "yes": 0,
+        "no": 0
+      },
+      "Vegan": {
+        "yes": 0,
+        "no": 0
+      },
+      "Vegetarian": {
+        "yes": 0,
+        "no": 0
+      }
+    }
+  },
+  {
+    "id": "restaurant-costa",
+    "name": "Restaurant Costa",
+    "location": "Mayagüez",
+    "reviews": [
+      {
+        "rating": 5,
+        "review": "b"
+      }
+    ],
+    "restrictions": {
+      "Halal": {
+        "yes": 0,
+        "no": 1
+      },
+      "Lactose Intolerant": {
+        "yes": 0,
+        "no": 1
+      },
+      "Nut Allergy": {
+        "yes": 0,
+        "no": 0
+      },
+      "Vegan": {
+        "yes": 0,
+        "no": 0
+      },
+      "Vegetarian": {
+        "yes": 0,
+        "no": 0
+      }
+    }
+  },
+  {
+    "id": "kfc",
+    "name": "KFC",
+    "location": "Añasco",
+    "reviews": [],
+    "restrictions": {
+      "Halal": {
+        "yes": 0,
+        "no": 0
+      },
+      "Lactose Intolerant": {
+        "yes": 0,
+        "no": 0
+      },
+      "Nut Allergy": {
+        "yes": 0,
+        "no": 0
+      },
+      "Vegan": {
+        "yes": 0,
+        "no": 0
+      },
+      "Vegetarian": {
+        "yes": 0,
+        "no": 0
+      }
+    }
+  },
+  {
+    "id": "el-cerro-de-juaco",
+    "name": "El Cerro de Juaco",
+    "location": "Rincón",
+    "reviews": [
+      {
+        "rating": 5,
+        "review": "Bussing"
+      }
+    ],
+    "restrictions": {
+      "Halal": {
+        "yes": 1,
+        "no": 0
+      },
+      "Lactose Intolerant": {
+        "yes": 1,
+        "no": 0
+      },
+      "Nut Allergy": {
+        "yes": 0,
+        "no": 0
+      },
+      "Vegan": {
+        "yes": 0,
+        "no": 0
+      },
+      "Vegetarian": {
+        "yes": 0,
+        "no": 0
+      }
+    }
+  },
+  {
+    "id": "don-frappe-don-maceta",
+    "name": "Don Frappe & Don Maceta",
+    "location": "Añasco",
+    "reviews": [],
+    "restrictions": {
+      "Halal": {
+        "yes": 0,
+        "no": 0
+      },
+      "Lactose Intolerant": {
+        "yes": 0,
+        "no": 0
+      },
+      "Nut Allergy": {
+        "yes": 0,
+        "no": 0
+      },
+      "Vegan": {
+        "yes": 0,
+        "no": 0
+      },
+      "Vegetarian": {
+        "yes": 0,
+        "no": 0
+      }
+    }
+  },
+  {
+    "id": "pal-21",
+    "name": "Pal 21",
+    "location": "Añasco",
+    "reviews": [],
+    "restrictions": {
+      "Halal": {
+        "yes": 0,
+        "no": 0
+      },
+      "Lactose Intolerant": {
+        "yes": 0,
+        "no": 0
+      },
+      "Nut Allergy": {
+        "yes": 0,
+        "no": 0
+      },
+      "Vegan": {
+        "yes": 0,
+        "no": 0
+      },
+      "Vegetarian": {
+        "yes": 0,
+        "no": 0
+      }
+    }
+  },
+  {
+    "id": "the-taco-maker",
+    "name": "The Taco Maker",
+    "location": "Añasco",
+    "reviews": [],
+    "restrictions": {
+      "Halal": {
+        "yes": 0,
+        "no": 0
+      },
+      "Lactose Intolerant": {
+        "yes": 0,
+        "no": 0
+      },
+      "Nut Allergy": {
+        "yes": 0,
+        "no": 0
+      },
+      "Vegan": {
+        "yes": 0,
+        "no": 0
+      },
+      "Vegetarian": {
+        "yes": 0,
+        "no": 0
+      }
+    }
+  },
+  {
+    "id": "wendy-s",
+    "name": "Wendy’s",
+    "location": "Añasco",
+    "reviews": [],
+    "restrictions": {
+      "Halal": {
+        "yes": 0,
+        "no": 0
+      },
+      "Lactose Intolerant": {
+        "yes": 0,
+        "no": 0
+      },
+      "Nut Allergy": {
+        "yes": 0,
+        "no": 0
+      },
+      "Vegan": {
+        "yes": 0,
+        "no": 0
+      },
+      "Vegetarian": {
+        "yes": 0,
+        "no": 0
+      }
+    }
+  },
+  {
+    "id": "church-s-chicken",
+    "name": "Church’s Chicken",
+    "location": "Añasco",
+    "reviews": [],
+    "restrictions": {
+      "Halal": {
+        "yes": 0,
+        "no": 0
+      },
+      "Lactose Intolerant": {
+        "yes": 0,
+        "no": 0
+      },
+      "Nut Allergy": {
+        "yes": 0,
+        "no": 0
+      },
+      "Vegan": {
+        "yes": 0,
+        "no": 0
+      },
+      "Vegetarian": {
+        "yes": 0,
+        "no": 0
+      }
+    }
+  },
+  {
+    "id": "funnel-cake-ice-cream-roll-by-brother",
+    "name": "Funnel cake & Ice cream roll  by brother",
+    "location": "Aguada",
+    "reviews": [],
+    "restrictions": {
+      "Halal": {
+        "yes": 0,
+        "no": 0
+      },
+      "Lactose Intolerant": {
+        "yes": 0,
+        "no": 0
+      },
+      "Nut Allergy": {
+        "yes": 0,
+        "no": 0
+      },
+      "Vegan": {
+        "yes": 0,
+        "no": 0
+      },
+      "Vegetarian": {
+        "yes": 0,
+        "no": 0
+      }
+    }
+  },
+  {
+    "id": "sabor-frapp-",
+    "name": "Sabor Frappé",
+    "location": "Aguada",
+    "reviews": [],
+    "restrictions": {
+      "Halal": {
+        "yes": 0,
+        "no": 0
+      },
+      "Lactose Intolerant": {
+        "yes": 0,
+        "no": 0
+      },
+      "Nut Allergy": {
+        "yes": 0,
+        "no": 0
+      },
+      "Vegan": {
+        "yes": 0,
+        "no": 0
+      },
+      "Vegetarian": {
+        "yes": 0,
+        "no": 0
+      }
+    }
+  },
+  {
+    "id": "hai-yun",
+    "name": "Hai Yun",
+    "location": "Aguadilla",
+    "reviews": [
+      {
+        "rating": null,
+        "review": "Gracias"
+      },
+      {
+        "rating": 5,
+        "review": "Nice"
+      }
+    ],
+    "restrictions": {
+      "Halal": {
+        "yes": 2,
+        "no": 0
+      },
+      "Lactose Intolerant": {
+        "yes": 2,
+        "no": 0
+      },
+      "Nut Allergy": {
+        "yes": 0,
+        "no": 0
+      },
+      "Vegan": {
+        "yes": 0,
+        "no": 0
+      },
+      "Vegetarian": {
+        "yes": 0,
+        "no": 0
+      }
+    }
+  },
+  {
+    "id": "wendy-s",
+    "name": "Wendy’s",
+    "location": "Aguadilla",
+    "reviews": [
+      {
+        "rating": 4,
+        "review": "nice"
+      }
+    ],
+    "restrictions": {
+      "Halal": {
+        "yes": 1,
+        "no": 0
+      },
+      "Lactose Intolerant": {
+        "yes": 1,
+        "no": 0
+      },
+      "Nut Allergy": {
+        "yes": 0,
+        "no": 0
+      },
+      "Vegan": {
+        "yes": 0,
+        "no": 0
+      },
+      "Vegetarian": {
+        "yes": 0,
+        "no": 0
+      }
+    }
+  },
+  {
+    "id": "burger-king",
+    "name": "Burger King",
+    "location": "Aguadilla",
+    "reviews": [],
+    "restrictions": {
+      "Halal": {
+        "yes": 0,
+        "no": 0
+      },
+      "Lactose Intolerant": {
+        "yes": 0,
+        "no": 0
+      },
+      "Nut Allergy": {
+        "yes": 0,
+        "no": 0
+      },
+      "Vegan": {
+        "yes": 0,
+        "no": 0
+      },
+      "Vegetarian": {
+        "yes": 0,
+        "no": 0
+      }
+    }
+  },
+  {
+    "id": "subway",
+    "name": "Subway",
+    "location": "Aguadilla",
+    "reviews": [],
+    "restrictions": {
+      "Halal": {
+        "yes": 0,
+        "no": 0
+      },
+      "Lactose Intolerant": {
+        "yes": 0,
+        "no": 0
+      },
+      "Nut Allergy": {
+        "yes": 0,
+        "no": 0
+      },
+      "Vegan": {
+        "yes": 0,
+        "no": 0
+      },
+      "Vegetarian": {
+        "yes": 0,
+        "no": 0
+      }
+    }
+  },
+  {
+    "id": "church-s-chicken",
+    "name": "Church’s Chicken",
+    "location": "Aguadilla",
+    "reviews": [],
+    "restrictions": {
+      "Halal": {
+        "yes": 0,
+        "no": 0
+      },
+      "Lactose Intolerant": {
+        "yes": 0,
+        "no": 0
+      },
+      "Nut Allergy": {
+        "yes": 0,
+        "no": 0
+      },
+      "Vegan": {
+        "yes": 0,
+        "no": 0
+      },
+      "Vegetarian": {
+        "yes": 0,
+        "no": 0
+      }
+    }
   }
 ]
