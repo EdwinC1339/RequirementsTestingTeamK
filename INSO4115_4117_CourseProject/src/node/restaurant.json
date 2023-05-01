@@ -45,21 +45,29 @@
       {
         "rating": 4,
         "review": "BUSING"
+      },
+      {
+        "rating": 4,
+        "review": "The food was amazing."
+      },
+      {
+        "rating": 4,
+        "review": "Nice"
       }
     ],
     "restrictions": {
       "Halal": {
-        "yes": 1,
+        "yes": 3,
         "no": 0,
         "No": null
       },
       "Lactose Intolerant": {
-        "yes": 0,
+        "yes": 2,
         "no": 1,
         "No": null
       },
       "Nut Allergy": {
-        "yes": 0,
+        "yes": 1,
         "no": 0
       },
       "Vegan": {
@@ -154,21 +162,33 @@
       {
         "rating": 4,
         "review": "Meh"
+      },
+      {
+        "rating": 4,
+        "review": "nice"
+      },
+      {
+        "rating": 5,
+        "review": "nice"
+      },
+      {
+        "rating": 4,
+        "review": "Muy bueno"
       }
     ],
     "restrictions": {
       "Halal": {
-        "yes": 8,
+        "yes": 11,
         "no": 0,
         "Yes": null
       },
       "Lactose Intolerant": {
-        "yes": 3,
+        "yes": 6,
         "no": 5,
         "Yes": null
       },
       "Nut Allergy": {
-        "yes": 3,
+        "yes": 4,
         "no": 0
       },
       "Vegan": {
@@ -336,19 +356,27 @@
       {
         "rating": 5,
         "review": "muy meh"
+      },
+      {
+        "rating": 5,
+        "review": "Food was kind of bland"
+      },
+      {
+        "rating": 4,
+        "review": "nice"
       }
     ],
     "restrictions": {
       "Halal": {
-        "yes": 2,
+        "yes": 4,
         "no": 0
       },
       "Lactose Intolerant": {
-        "yes": 2,
+        "yes": 4,
         "no": 0
       },
       "Nut Allergy": {
-        "yes": 2,
+        "yes": 3,
         "no": 0
       },
       "Vegan": {
@@ -411,15 +439,19 @@
       {
         "rating": 4,
         "review": "nice"
+      },
+      {
+        "rating": 4,
+        "review": "The food was bussin"
       }
     ],
     "restrictions": {
       "Halal": {
-        "yes": 0,
+        "yes": 1,
         "no": 0
       },
       "Lactose Intolerant": {
-        "yes": 0,
+        "yes": 1,
         "no": 0
       },
       "Nut Allergy": {
